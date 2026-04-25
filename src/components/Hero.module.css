@@ -1,0 +1,144 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 120px 40px 60px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.bgText {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-55%);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(160px, 22vw, 340px);
+  line-height: 0.85;
+  color: #111;
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  user-select: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.meta {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(64px, 10vw, 140px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.name span {
+  color: var(--accent);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 48px;
+  position: relative;
+}
+
+.desc {
+  max-width: 440px;
+  color: var(--mid);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.ctaLabel {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+
+.ctaArrow {
+  background: var(--black);
+  border: 2px solid var(--accent);
+  border-left: none;
+  color: var(--accent);
+  padding: 0 18px;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cta:hover .ctaLabel {
+  background: var(--black);
+  color: var(--accent);
+}
+
+.cta:hover .ctaArrow {
+  background: var(--accent);
+  color: var(--black);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero {
+    padding: 100px 24px 48px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 90px 20px 40px;
+  }
+
+  .meta {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,71 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid #1f1f1f;
+}
+
+.card {
+  padding: 40px;
+  border-right: 1px solid #1f1f1f;
+}
+
+.card:last-child {
+  border-right: none;
+}
+
+.label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.school {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.degree {
+  color: var(--mid);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.gpa {
+  margin-top: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  color: var(--accent);
+}
+
+.gpaSub {
+  font-size: 16px;
+  color: var(--mid);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    border-right: none;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .card:last-child {
+    border-bottom: none;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    padding: 32px 20px;
+  }
+}

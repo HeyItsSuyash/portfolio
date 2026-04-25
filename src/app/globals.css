@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500&display=swap');
+
+:root {
+  --black: #0a0a0a;
+  --white: #f5f3ee;
+  --accent: #e8f04a;
+  --mid: #b0b0a8;
+  --card-bg: #141414;
+  --tag-bg: #1e1e1e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  cursor: crosshair;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}
+
+/* ── SECTION WRAPPER ── */
+section {
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 40px 40px 0;
+}
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  padding: 12px 40px 40px;
+}
+
+/* ── GLOBALS RESPONSIVE ── */
+@media (max-width: 600px) {
+  .section-header {
+    padding: 32px 20px 0;
+  }
+  .section-title {
+    padding: 12px 20px 32px;
+    font-size: clamp(40px, 12vw, 48px);
+  }
+}
