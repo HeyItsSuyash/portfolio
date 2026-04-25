@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suyash Shukla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f3ee;
+    --accent: #e8f04a;   /* electric yellow */
+    --mid: #b0b0a8;
+    --card-bg: #141414;
+    --tag-bg: #1e1e1e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    cursor: crosshair;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 40px;
+    border-bottom: 1px solid #1f1f1f;
+    background: var(--black);
+    mix-blend-mode: normal;
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 120px 40px 60px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .hero-bg-text {
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translateY(-55%);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: clamp(160px, 22vw, 340px);
+    line-height: 0.85;
+    color: #111;
+    letter-spacing: -0.02em;
+    pointer-events: none;
+    user-select: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .hero-meta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: clamp(64px, 10vw, 140px);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 48px;
+    position: relative;
+  }
+  .hero-desc {
+    max-width: 440px;
+    color: var(--mid);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .hero-cta {
+    display: flex; align-items: center; gap: 0;
+    text-decoration: none;
+  }
+  .hero-cta-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--accent);
+    padding: 14px 24px;
+    border: 2px solid var(--accent);
+    transition: background 0.15s, color 0.15s;
+  }
+  .hero-cta-arrow {
+    background: var(--black);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 14px 16px;
+    font-size: 18px;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+  }
+  .hero-cta:hover .hero-cta-label { background: var(--black); color: var(--accent); }
+  .hero-cta:hover .hero-cta-arrow { background: var(--accent); color: var(--black); }
+
+  /* ── SECTION WRAPPER ── */
+  section { border-bottom: 1px solid #1f1f1f; }
+
+  .section-header {
+    display: flex; align-items: baseline; gap: 20px;
+    padding: 40px 40px 0;
+  }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 12px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--mid);
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.9; letter-spacing: -0.01em; text-transform: uppercase;
+    padding: 12px 40px 40px;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid #1f1f1f;
+  }
+  .about-cell {
+    padding: 40px;
+    border-right: 1px solid #1f1f1f;
+  }
+  .about-cell:last-child { border-right: none; }
+  .about-cell h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 12px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
+  }
+  .about-cell p { color: var(--mid); line-height: 1.75; }
+  .stat-row { display: flex; flex-direction: column; gap: 20px; }
+  .stat {
+    display: flex; flex-direction: column;
+    border-left: 2px solid var(--accent);
+    padding-left: 16px;
+  }
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 48px; line-height: 1;
+    color: var(--white);
+  }
+  .stat-desc { font-size: 12px; color: var(--mid); letter-spacing: 0.05em; margin-top: 4px; }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid #1f1f1f;
+  }
+  .project-card {
+    padding: 40px;
+    border-right: 1px solid #1f1f1f;
+    border-bottom: 1px solid #1f1f1f;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+  .project-card:nth-child(2n) { border-right: none; }
+  .project-card:hover { background: #111; }
+  .project-card::after {
+    content: '→';
+    position: absolute; bottom: 40px; right: 40px;
+    font-size: 24px; color: var(--accent);
+    opacity: 0; transform: translateX(-8px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .project-card:hover::after { opacity: 1; transform: translateX(0); }
+  .project-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--mid); margin-bottom: 24px;
+  }
+  .project-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 36px;
+    line-height: 1; text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .project-desc { color: var(--mid); font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--mid);
+    background: var(--tag-bg);
+    border: 1px solid #2a2a2a;
+    padding: 4px 10px;
+  }
+  .project-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 12px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+  }
+  .project-link:hover { opacity: 0.7; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #1f1f1f;
+  }
+  .skill-group {
+    padding: 40px;
+    border-right: 1px solid #1f1f1f;
+  }
+  .skill-group:last-child { border-right: none; }
+  .skill-group h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 20px;
+  }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    font-size: 14px; color: var(--mid);
+    padding: 8px 0;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .skill-list li::before {
+    content: ''; width: 4px; height: 4px;
+    background: var(--accent); flex-shrink: 0;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #1f1f1f;
+  }
+  .edu-card {
+    padding: 40px;
+    border-right: 1px solid #1f1f1f;
+  }
+  .edu-card:last-child { border-right: none; }
+  .edu-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 12px;
+  }
+  .edu-school {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 22px;
+    text-transform: uppercase; line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .edu-degree { color: var(--mid); font-size: 13px; line-height: 1.6; }
+  .edu-gpa {
+    margin-top: 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 32px;
+    color: var(--accent);
+  }
+
+  /* ── ACHIEVEMENTS ── */
+  .ach-list {
+    border-top: 1px solid #1f1f1f;
+  }
+  .ach-item {
+    display: flex; align-items: center;
+    padding: 24px 40px;
+    border-bottom: 1px solid #1a1a1a;
+    gap: 24px;
+    transition: background 0.15s;
+  }
+  .ach-item:hover { background: #111; }
+  .ach-icon {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 12px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--black); background: var(--accent);
+    padding: 4px 10px; flex-shrink: 0;
+    min-width: 80px; text-align: center;
+  }
+  .ach-text { font-size: 14px; color: var(--mid); }
+  .ach-text strong { color: var(--white); font-weight: 500; }
+
+  /* ── CONTACT ── */
+  .contact-inner {
+    padding: 80px 40px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+  }
+  .contact-big {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: clamp(56px, 8vw, 110px);
+    text-transform: uppercase; line-height: 0.9;
+    letter-spacing: -0.01em;
+  }
+  .contact-big span { color: var(--accent); }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+  .contact-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--mid); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+    transition: color 0.15s;
+  }
+  .contact-link:hover { color: var(--accent); }
+  .contact-link span { font-size: 16px; }
+
+  footer {
+    padding: 24px 40px;
+    border-top: 1px solid #1f1f1f;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: #333;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">SS</a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-text">SUYASH</div>
+  <div class="hero-meta">Available for Internships &amp; Collaboration — 2026</div>
+  <div class="hero-name">Suyash<br><span>Shukla</span></div>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      Full-stack engineer &amp; ML practitioner. Building production systems at scale —
+      from cloud-native platforms to autonomous AI agents. CS@MMMUT + DS@IIT Madras.
+    </p>
+    <a class="hero-cta" href="#work">
+      <span class="hero-cta-label">View Work</span>
+      <span class="hero-cta-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header"><span class="section-label">01 — About</span></div>
+  <div class="section-title">Who I Am</div>
+  <div class="about-grid">
+    <div class="about-cell">
+      <h3>Background</h3>
+      <p>
+        I'm a CS undergraduate at MMMUT Gorakhpur and concurrently pursuing a B.Sc in Data Science from IIT Madras.
+        I founded the Computer Science &amp; Innovation Society at MMMUT, built a cloud-native virtual lab serving
+        400+ concurrent users, and published research on LLM bias detection with Taylor &amp; Francis.
+        I move fast from idea to production.
+      </p>
+    </div>
+    <div class="about-cell">
+      <h3>Impact</h3>
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-num">400+</span>
+          <span class="stat-desc">Concurrent users on Prayukti vLAB</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">2500+</span>
+          <span class="stat-desc">Participants, HackStrom 2K25</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">1000+</span>
+          <span class="stat-desc">Active users on EarnBuddy SaaS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="work">
+  <div class="section-header"><span class="section-label">02 — Projects</span></div>
+  <div class="section-title">Selected Work</div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-num">Project — 01</div>
+      <div class="project-name">Prayukti vLAB</div>
+      <p class="project-desc">
+        Multi-tenant virtual laboratory platform with RBAC, real-time experiment execution over WebSockets,
+        and automated grading. 50+ experiments, 99%+ uptime. Reduced deployment cycle time by 70%.
+      </p>
+      <div class="project-tags">
+        <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
+        <span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">WebSockets</span>
+      </div>
+      <a class="project-link" href="https://mmmut.prayukti.org" target="_blank">mmmut.prayukti.org</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">Project — 02</div>
+      <div class="project-name">EarnBuddy</div>
+      <p class="project-desc">
+        Microservices SaaS platform with domain-driven REST APIs, JWT auth with RBAC, real-time bidirectional
+        chat, and CMS workflow automation. Cut p95 latency by 40% via MongoDB pipeline + Redis optimization.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Socket.IO</span>
+        <span class="tag">Redis</span><span class="tag">JWT</span><span class="tag">Microservices</span>
+      </div>
+      <a class="project-link" href="https://earnbuddy.io" target="_blank">earnbuddy.io</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">Project — 03</div>
+      <div class="project-name">Agentic AI Pipeline</div>
+      <p class="project-desc">
+        Fully autonomous multi-agent pipeline using LangGraph DAG orchestration and LangChain tool-calling
+        to scrape, deduplicate, quality-filter, and schema-validate instruction-tuning datasets —
+        zero manual intervention in the hot path.
+      </p>
+      <div class="project-tags">
+        <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">OpenAI API</span>
+        <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">Project — 04</div>
+      <div class="project-name">LLM Benchmark Suite</div>
+      <p class="project-desc">
+        Evaluation harness benchmarking LLaMA, Mistral, and Phi across reasoning, code synthesis,
+        and instruction-following. SQL-backed metrics store with window functions and CTEs tracking
+        accuracy, throughput, and token efficiency per model version.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">HuggingFace</span><span class="tag">vLLM</span>
+        <span class="tag">MLflow</span><span class="tag">PostgreSQL</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">Project — 05</div>
+      <div class="project-name">Voice AI Agent</div>
+      <p class="project-desc">
+        Production voice AI pipeline: Whisper ASR → LLM reasoning with multi-turn memory and tool-calling →
+        neural TTS. Captures structured interaction datasets enabling continuous RLHF-style improvement.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Whisper ASR</span><span class="tag">LangChain</span><span class="tag">GCP</span>
+        <span class="tag">Twilio</span><span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">Project — 06</div>
+      <div class="project-name">Caller.work</div>
+      <p class="project-desc">
+        Fault-tolerant event-driven automated calling backend with webhook orchestration, structured logging,
+        and distributed tracing on GCP. Sustained 50+ automated calls/month at sub-second response latency.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Node.js</span><span class="tag">GCP</span><span class="tag">Twilio</span>
+        <span class="tag">Event-driven</span><span class="tag">Webhooks</span>
+      </div>
+      <a class="project-link" href="https://caller.work" target="_blank">caller.work</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header"><span class="section-label">03 — Skills</span></div>
+  <div class="section-title">Technical Stack</div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Languages &amp; Frameworks</h3>
+      <ul class="skill-list">
+        <li>Python, TypeScript, JavaScript</li>
+        <li>Java, C++, SQL</li>
+        <li>React 18, Next.js 14</li>
+        <li>Node.js, Express.js, FastAPI</li>
+        <li>REST, GraphQL, gRPC, WebSockets</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Data &amp; AI / ML</h3>
+      <ul class="skill-list">
+        <li>PyTorch, TensorFlow, scikit-learn</li>
+        <li>HuggingFace Transformers, vLLM</li>
+        <li>LangChain, LangGraph, OpenAI API</li>
+        <li>RAG, RLHF, LoRA / QLoRA fine-tuning</li>
+        <li>MLflow, Weights &amp; Biases</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Infrastructure &amp; Systems</h3>
+      <ul class="skill-list">
+        <li>Docker, Kubernetes (K8s)</li>
+        <li>GCP, AWS, Vercel</li>
+        <li>GitHub Actions CI/CD</li>
+        <li>PostgreSQL, MongoDB, Redis</li>
+        <li>System Design (HLD / LLD), DBMS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header"><span class="section-label">04 — Education</span></div>
+  <div class="section-title">Academic Track</div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-label">2023 — 2027</div>
+      <div class="edu-school">MMMUT<br>Gorakhpur</div>
+      <div class="edu-degree">B.Tech — Computer Science &amp; Engineering</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-label">2024 — 2028</div>
+      <div class="edu-school">IIT<br>Madras</div>
+      <div class="edu-degree">B.Sc — Data Science &amp; Applications</div>
+      <div class="edu-gpa">8.4</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-label">CBSE — 2023</div>
+      <div class="edu-school">DPS<br>Lucknow</div>
+      <div class="edu-degree">Class XII (PCM + CS)</div>
+      <div class="edu-gpa" style="font-size:22px">93.6%<br><span style="font-size:16px;color:var(--mid)">JEE Mains — 95.6 Percentile</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-header"><span class="section-label">05 — Recognition</span></div>
+  <div class="section-title">Achievements</div>
+  <div class="ach-list">
+    <div class="ach-item">
+      <span class="ach-icon">Published</span>
+      <span class="ach-text"><strong>Taylor &amp; Francis (CRC Press) 2025</strong> — "Bias Detection and Mitigation in Large Language Models: A Fairness-Driven Approach"</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">National</span>
+      <span class="ach-text"><strong>National Finalist</strong> — Venture-Verse Hackathon, IIT BHU E-Summit</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">Semi-Final</span>
+      <span class="ach-text"><strong>Semi-Finalist</strong> — EMPRESARIO 2025, IIT Kharagpur</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">Rank #32</span>
+      <span class="ach-text"><strong>National Finalist</strong> — EscalateXV2 CTF, GLA University (Rank #32 / 700+ teams)</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">1st Place</span>
+      <span class="ach-text"><strong>1st Place</strong> — UP Regional Science Exhibition, CBSE Zone (State-level) 2019</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">GATE 2026</span>
+      <span class="ach-text"><strong>GATE 2026 Qualified</strong> — Computer Science &amp; Engineering</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-big">Let's<br>Build<br><span>Together.</span></div>
+    <div class="contact-links">
+      <a class="contact-link" href="https://linkedin.com/in/suyashshukla" target="_blank"><span>↗</span> LinkedIn</a>
+      <a class="contact-link" href="https://github.com/suyashshukla" target="_blank"><span>↗</span> GitHub</a>
+      <a class="contact-link" href="mailto:suyash@example.com"><span>↗</span> Email</a>
+      <a class="contact-link" href="https://earnbuddy.io" target="_blank"><span>↗</span> Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Suyash Shukla — 2026</p>
+  <p>CS@MMMUT · DS@IIT Madras</p>
+</footer>
+
+</body>
+</html>
