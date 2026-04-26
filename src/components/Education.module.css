@@ -38,17 +38,27 @@
   line-height: 1.6;
 }
 
-.gpa {
-  margin-top: 16px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 32px;
-  color: var(--accent);
+.achievements {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.gpaSub {
-  font-size: 16px;
-  color: var(--mid);
+.achievements li {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.bullet {
+  color: var(--accent);
+  font-family: monospace;
 }
 
 /* ── RESPONSIVE ── */

@@ -1,14 +1,16 @@
 .wrapper {
-  background-color: #1a1a1a; /* Gray background for the entire footer section */
-  border-top: 1px solid #2a2a2a;
+  background-color: #0c0c0c; /* Noticeably darker gray than before */
+  border-top: 1px solid #1a1a1a;
 }
 
 .section {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border on top of grey */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03); 
+  display: flex;
+  flex-direction: column;
 }
 
 .inner {
-  padding: 80px 40px;
+  padding: 80px 40px 40px 40px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -33,23 +35,92 @@
   color: var(--accent);
 }
 
+.ctaWrapper {
+  margin-top: 10px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background-color: var(--accent);
+  padding: 14px 28px;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(232, 240, 74, 0.2);
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px);
+  background-color: #c7ce3b; /* A bit darker yellow for hover */
+  box-shadow: 0 6px 20px rgba(232, 240, 74, 0.3);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.textLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.textLink {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.15s;
+}
+
+.textLink:hover {
+  color: var(--accent);
+}
+
+.textLink span {
+  font-size: 16px;
+}
+
+.bottomSocial {
+  padding: 0 40px 60px 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .socialIcons {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   align-items: center;
 }
 
 .iconLink {
   color: var(--mid);
-  transition: color 0.2s, transform 0.2s;
+  transition: color 0.2s, transform 0.2s, border-color 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 36px;  /* Smaller than before */
+  height: 36px; /* Smaller than before */
   border-radius: 50%;
-  border: 1px solid #333;
-  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #222;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .iconLink:hover {
@@ -60,8 +131,8 @@
 }
 
 .iconLink svg {
-  width: 20px;
-  height: 20px;
+  width: 16px; /* Smaller than before */
+  height: 16px; /* Smaller than before */
 }
 
 .footer {
@@ -77,7 +148,7 @@
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #666; /* Light grey text replacing very dark #333 text because bg is now grey */
+  color: #555;
 }
 
 /* ── RESPONSIVE ── */
@@ -85,9 +156,18 @@
   .inner {
     flex-direction: column;
     align-items: flex-start;
-    padding: 60px 20px;
+    gap: 50px;
+    padding: 60px 20px 40px 20px;
   }
   
+  .textLinks {
+    align-items: flex-start;
+  }
+  
+  .bottomSocial {
+    padding: 0 20px 40px 20px;
+  }
+
   .footer {
     flex-direction: column;
     align-items: flex-start;

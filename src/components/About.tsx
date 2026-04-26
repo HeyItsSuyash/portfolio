@@ -21,16 +21,16 @@ export default function About() {
           <h3>Impact</h3>
           <div className={styles.statRow}>
             <div className={styles.stat}>
-              <span className={styles.statNum}>400+</span>
-              <span className={styles.statDesc}>Concurrent users on Prayukti vLAB</span>
+              <span className={styles.statNum}>25+</span>
+              <span className={styles.statDesc}>Projects (spanning across multiple domains, from websites to browser extensions, to mobile apps and ai integrated products)</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statNum}>2500+</span>
-              <span className={styles.statDesc}>Participants, HackStrom 2K25</span>
+              <span className={styles.statNum}>3+</span>
+              <span className={styles.statDesc}>Internships</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statNum}>1000+</span>
-              <span className={styles.statDesc}>Active users on EarnBuddy SaaS</span>
+              <span className={styles.statNum}>8+</span>
+              <span className={styles.statDesc}>Years Experience in trying to search for y this bug occured on stack overflow</span>
             </div>
           </div>
         </div>

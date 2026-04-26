@@ -44,30 +44,53 @@ export default function Contact() {
     <div className={styles.wrapper}>
       <section id="contact" className={styles.section}>
         <div className={styles.inner}>
+          
           <div className={styles.left}>
             <div className={styles.big}>
               Let&apos;s<br />Build<br /><span>Together.</span>
             </div>
-            <div className={styles.socialIcons}>
+            <div className={styles.ctaWrapper}>
+              <a href="mailto:suyash@example.com?subject=Let's Meet!" className={styles.ctaBtn}>
+                Book a Meeting ↗
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.right}>
+            <div className={styles.textLinks}>
               {links.map((l) => (
                 <a
                   key={l.label}
-                  className={styles.iconLink}
+                  className={styles.textLink}
                   href={l.href}
                   target={l.href.startsWith('http') ? '_blank' : undefined}
                   rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  aria-label={l.label}
                 >
-                  {l.icon}
+                  <span>↗</span> {l.label}
                 </a>
               ))}
             </div>
           </div>
-          <div className={styles.right}>
-            {/* Kept empty or can add additional contact details later */}
+        </div>
+
+        <div className={styles.bottomSocial}>
+          <div className={styles.socialIcons}>
+            {links.map((l) => (
+              <a
+                key={l.label}
+                className={styles.iconLink}
+                href={l.href}
+                target={l.href.startsWith('http') ? '_blank' : undefined}
+                rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                aria-label={l.label}
+              >
+                {l.icon}
+              </a>
+            ))}
           </div>
         </div>
       </section>
+
       <footer className={styles.footer}>
         <p>Suyash Shukla — 2026</p>
         <p>CS@MMMUT · DS@IIT Madras</p>

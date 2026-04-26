@@ -11,8 +11,7 @@ export default function Hero() {
       </div>
       <div className={styles.bottom}>
         <p className={styles.desc}>
-          Full-stack engineer &amp; ML practitioner. Building production systems at scale —
-          from cloud-native platforms to autonomous AI agents. CS@MMMUT + DS@IIT Madras.
+          "We have a strategic plan. It's called doing things" - Herb Kelleher.
         </p>
         <a className={styles.cta} href="#work">
           <span className={styles.ctaLabel}>View Work</span>
