@@ -1,0 +1,31 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 44px;
+  height: 44px;
+  background: var(--card-bg, #141414);
+  border: 1px solid #1f1f1f;
+  color: var(--accent);
+  font-size: 20px;
+  cursor: none; /* since we have a custom cursor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 4px;
+}
+
+.scrollToTop:hover {
+  background: var(--tag-bg, #1e1e1e);
+  color: var(--white);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 600px) {
+  .scrollToTop {
+    bottom: 20px;
+    right: 20px;
+  }
+}

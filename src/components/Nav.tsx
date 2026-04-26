@@ -10,6 +10,7 @@ export default function Nav() {
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
+        <a href="https://blog.suyashshukla.com" target="_blank" rel="noopener noreferrer">The Fallible Journey ↗</a>
       </div>
     </nav>
   );

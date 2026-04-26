@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Nav from '@/components/Nav';
+import CustomCursor from '@/components/CustomCursor';
+import ParticlesBackground from '@/components/ParticlesBackground';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata: Metadata = {
   title: 'Suyash Shukla — Full-Stack Engineer & ML Practitioner',
@@ -61,7 +64,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <CustomCursor />
+        <ParticlesBackground />
         <Nav />
+        <ScrollToTop />
         {children}
       </body>
     </html>
