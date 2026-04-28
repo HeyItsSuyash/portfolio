@@ -6,9 +6,9 @@ import ParticlesBackground from '@/components/ParticlesBackground';
 import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata: Metadata = {
-  title: 'Suyash Shukla — Full-Stack Engineer & ML Practitioner',
+  title: 'Suyash Shukla | Portfolio | Building @ ₹499',
   description:
-    'Portfolio of Suyash Shukla — Full-stack engineer, ML practitioner & founder. Built Prayukti vLAB (400+ users), EarnBuddy SaaS (1000+ users), Voice AI agents, and published LLM research with Taylor & Francis. CS @ MMMUT Gorakhpur | Data Science @ IIT Madras.',
+    'Full-stack engineer, ML practitioner & founder. Built Prayukti vLAB (400+ users), EarnBuddy SaaS (1000+ users), Voice AI agents, and published LLM research with Taylor & Francis. CS @ MMMUT Gorakhpur | Data Science @ IIT Madras.',
   keywords: [
     'Suyash Shukla',
     'Full Stack Engineer',
@@ -56,6 +56,8 @@ export const metadata: Metadata = {
   },
 };
 
+import ClientLayout from '@/components/ClientLayout';
+
 export default function RootLayout({
   children,
 }: {
@@ -64,12 +66,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CustomCursor />
-        <ParticlesBackground />
-        <Nav />
-        <ScrollToTop />
-        {children}
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );
 }
+

@@ -1,0 +1,235 @@
+.main {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: var(--white);
+  padding: 120px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  margin-bottom: 80px;
+}
+
+.heroTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 8vw, 96px);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+
+.context {
+  max-width: 600px;
+  color: var(--mid);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.descriptionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-bottom: 100px;
+}
+
+.contentBlock {
+  max-width: 800px;
+}
+
+.emphasize {
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.contentBlock p, .contentBlock li {
+  color: var(--mid);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.contentBlock ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contentBlock li {
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.contentBlock li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+
+.price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--accent);
+  margin: 0;
+}
+
+.formSection {
+  background: #0f0f0f;
+  padding: 80px 60px;
+  border: 1px solid #1f1f1f;
+  margin-bottom: 100px;
+}
+
+.sectionTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+}
+
+.field textarea, .field input, .field select {
+  background: #151515;
+  border: 1px solid #333;
+  padding: 16px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.field textarea:focus, .field input:focus, .field select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.checkboxField {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.checkboxField input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checkboxField label {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.5;
+}
+
+.submitBtn {
+  background: var(--accent);
+  color: var(--black);
+  border: none;
+  padding: 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  width: 200px;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.nextSection {
+  padding: 40px 0;
+}
+
+.nextContent {
+  max-width: 800px;
+  color: var(--mid);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.nextContent p {
+  margin-bottom: 16px;
+}
+
+.groundingLine {
+  margin-top: 32px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.successContainer {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.backHome {
+  display: inline-block;
+  margin-top: 40px;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  /* Adjustments if needed */
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 100px 20px;
+  }
+  
+  .formSection {
+    padding: 60px 24px;
+  }
+  
+  .submitBtn {
+    width: 100%;
+  }
+}

@@ -17,8 +17,8 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  overflow-x: hidden;
 }
 
 body {
@@ -47,6 +47,15 @@ a, button {
   z-index: 9999;
   box-shadow: 0 0 15px rgba(232, 240, 74, 0.15); /* subtle glow */
   transition: transform 0.05s ease-out;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+  body, a, button {
+    cursor: auto;
+  }
 }
 
 /* ── SCROLLBAR ── */

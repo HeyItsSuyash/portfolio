@@ -18,12 +18,14 @@
   font-weight: 900;
   font-size: clamp(160px, 22vw, 340px);
   line-height: 0.85;
-  color: #111;
+  color: rgba(40, 40, 40, 0.4); /* Dark gray transparent */
   letter-spacing: -0.02em;
   pointer-events: none;
   user-select: none;
   text-transform: uppercase;
   white-space: nowrap;
+  -webkit-text-stroke: 1px rgba(255, 255, 240, 0.1); /* Faint yellowish white stroke */
+  text-shadow: 0 0 15px rgba(255, 255, 240, 0.05); /* Faint glow */
 }
 
 .meta {
