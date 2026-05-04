@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './variables.css';
+import './components.css';
 import Nav from '@/components/Nav';
 import CustomCursor from '@/components/CustomCursor';
 import ParticlesBackground from '@/components/ParticlesBackground';
@@ -9,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Suyash Shukla | Portfolio | Building @ ₹499',
   description:
     'Full-stack engineer, ML practitioner & founder. Built Prayukti vLAB (400+ users), EarnBuddy SaaS (1000+ users), Voice AI agents, and published LLM research with Taylor & Francis. CS @ MMMUT Gorakhpur | Data Science @ IIT Madras.',
+  icons: {
+    icon: '/logo.ico',
+  },
   keywords: [
     'Suyash Shukla',
     'Full Stack Engineer',

@@ -1,146 +1,116 @@
 .hero {
-  min-height: 100vh;
+  height: 100vh;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 120px 40px 60px;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid #1f1f1f;
-}
-
-.bgText {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-55%);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: clamp(160px, 22vw, 340px);
-  line-height: 0.85;
-  color: rgba(40, 40, 40, 0.4); /* Dark gray transparent */
-  letter-spacing: -0.02em;
-  pointer-events: none;
-  user-select: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  -webkit-text-stroke: 1px rgba(255, 255, 240, 0.1); /* Faint yellowish white stroke */
-  text-shadow: 0 0 15px rgba(255, 255, 240, 0.05); /* Faint glow */
-}
-
-.meta {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mid);
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: clamp(64px, 10vw, 140px);
-  line-height: 0.88;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 1;
-}
-
-.name span {
-  color: var(--accent);
-}
-
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 48px;
-  position: relative;
-}
-
-.desc {
-  max-width: 440px;
-  color: var(--mid);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.cta {
-  display: inline-flex;
-  align-items: stretch;
-  gap: 0;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-.ctaLabel {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--black);
-  background: var(--accent);
-  border: 2px solid var(--accent);
-  padding: 0 24px;
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-  transition: background 0.15s, color 0.15s;
-}
-
-.ctaArrow {
-  background: var(--black);
-  border: 2px solid var(--accent);
-  border-left: none;
-  color: var(--accent);
-  padding: 0 18px;
-  font-size: 20px;
-  line-height: 1;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  transition: background 0.15s, color 0.15s;
+  position: relative;
+  overflow: hidden;
+  background: var(--clay-primary);
 }
 
-.cta:hover .ctaLabel {
-  background: var(--black);
-  color: var(--accent);
+.bgName {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--clay-font), sans-serif;
+  font-weight: 800;
+  font-size: 25vw;
+  color: rgba(255, 255, 255, 0.2); /* More opaque */
+  pointer-events: none;
+  z-index: 1;
+  white-space: nowrap;
 }
 
-.cta:hover .ctaArrow {
-  background: var(--accent);
-  color: var(--black);
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  .hero {
-    padding: 100px 24px 48px;
-  }
+.imageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 
-  .bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
   }
-
-  .desc {
-    max-width: 100%;
+  .content {
+    align-items: center;
+  }
+  .cta {
+    margin: 0 auto;
+  }
+  .imageWrapper {
+    order: -1;
   }
 }
 
-@media (max-width: 600px) {
-  .hero {
-    padding: 90px 20px 40px;
-  }
+.definition {
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  max-width: 320px;
+  z-index: 10;
+  color: white;
+  font-family: var(--clay-font), sans-serif;
+  text-align: right;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
 
-  .meta {
-    font-size: 10px;
+.defWord {
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 2px;
+  color: white;
+}
+
+.phonetic {
+  font-weight: 400;
+  font-size: 18px;
+  opacity: 0.7;
+  margin-left: 10px;
+  font-family: serif; /* Better for phonetic symbols */
+}
+
+.defType {
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.defMeaning {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .definition {
+    bottom: 30px;
+    right: 20px;
+    left: 20px;
+    max-width: none;
+    text-align: center;
   }
+  .defWord { font-size: 22px; }
+  .phonetic { font-size: 16px; }
+  .defMeaning { font-size: 14px; }
 }

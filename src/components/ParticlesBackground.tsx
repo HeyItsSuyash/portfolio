@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Script from 'next/script';
 
 export default function ParticlesBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
   useEffect(() => {
     const initParticles = () => {
       // @ts-ignore
@@ -12,35 +14,33 @@ export default function ParticlesBackground() {
         window.particlesJS('particles-js', {
           particles: {
             number: {
-              value: 80,
+              value: 30,
               density: { enable: true, value_area: 800 },
             },
-            color: { value: '#ffffff' },
+            color: { value: '#065f46' },
             shape: {
-              type: 'triangle',
-              stroke: { width: 0, color: '#000000' },
-              polygon: { nb_sides: 3 },
+              type: 'circle',
             },
             opacity: {
               value: 0.15,
-              random: false,
-              anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+              random: true,
+              anim: { enable: true, speed: 0.5, opacity_min: 0.05, sync: false },
             },
             size: {
-              value: 3,
+              value: 12,
               random: true,
               anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
             },
             line_linked: {
               enable: true,
-              distance: 150,
-              color: '#ffffff',
-              opacity: 0.15,
+              distance: 200,
+              color: '#065f46',
+              opacity: 0.05,
               width: 1,
             },
             move: {
               enable: true,
-              speed: 1.5,
+              speed: 0.8,
               direction: 'none',
               random: true,
               straight: false,
@@ -52,16 +52,13 @@ export default function ParticlesBackground() {
           interactivity: {
             detect_on: 'window',
             events: {
-              onhover: { enable: true, mode: 'bubble' }, // Grab can sometimes draw lines over content, bubble expands them slightly or repulse to gently move away
+              onhover: { enable: true, mode: 'bubble' },
               onclick: { enable: false, mode: 'push' },
               resize: true,
             },
             modes: {
-              grab: { distance: 140, line_linked: { opacity: 0.3 } },
-              bubble: { distance: 200, size: 5, duration: 2, opacity: 0.3, speed: 3 },
+              bubble: { distance: 200, size: 16, duration: 2, opacity: 0.3, speed: 3 },
               repulse: { distance: 100, duration: 0.4 },
-              push: { particles_nb: 4 },
-              remove: { particles_nb: 2 },
             },
           },
           retina_detect: true,
@@ -97,9 +94,10 @@ export default function ParticlesBackground() {
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: -1, // Keep behind content
-          pointerEvents: 'none', // Prevent blocking clicks
-          background: 'linear-gradient(to bottom, #050505 0%, #0a0a0a 100%)', // Very dark gradient
+          zIndex: -1,
+          pointerEvents: 'none',
+          background: 'var(--clay-bg)',
+          overflow: 'hidden',
         }}
       />
     </>

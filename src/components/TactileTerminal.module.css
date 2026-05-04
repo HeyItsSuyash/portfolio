@@ -1,0 +1,122 @@
+.terminalContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--clay-space-5) 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.terminalShell {
+  width: 100%;
+  background: var(--clay-primary);
+  border-radius: var(--clay-radius);
+  box-shadow: 
+    10px 10px 20px rgba(0,0,0,0.2),
+    inset -4px -4px 8px rgba(0,0,0,0.1),
+    inset 4px 4px 8px rgba(255,255,255,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-out;
+  cursor: text;
+}
+
+.terminalShell:hover {
+  transform: translateY(-5px);
+}
+
+.terminalHeader {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dotGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+.title {
+  flex-grow: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: monospace;
+  font-size: 14px;
+  margin-right: 44px; /* Offset the dots to keep title centered */
+}
+
+.terminalBody {
+  padding: 24px;
+  min-height: 250px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Custom internal scrollbar for terminal */
+.terminalBody::-webkit-scrollbar {
+  width: 8px;
+}
+.terminalBody::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+.terminalBody::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.logEntry {
+  margin-bottom: 16px;
+}
+
+.commandLine {
+  font-weight: bold;
+  color: #fbbf24; /* Yellow for command */
+  margin-bottom: 4px;
+}
+
+.prompt {
+  color: #10b981; /* Bright green prompt */
+  margin-right: 8px;
+}
+
+.output {
+  color: rgba(255, 255, 255, 0.8);
+  white-space: pre-wrap;
+}
+
+.inputForm {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fbbf24;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bold;
+  flex-grow: 1;
+  caret-color: #10b981;
+}

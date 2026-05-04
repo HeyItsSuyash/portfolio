@@ -1,0 +1,50 @@
+:root {
+  /* Color Palette - Strict Forest Green Theme */
+  --clay-bg: #f0f4f2;
+  --clay-primary: #047857; /* Lightened Forest Green */
+  --clay-primary-light: #059669;
+  --clay-text: #064e3b;
+  --clay-text-muted: #475569;
+  --clay-surface: #ffffff;
+  --clay-white: #ffffff;
+
+  /* Typography - Reverting to Fredoka */
+  --clay-font: 'Fredoka', sans-serif;
+  
+  /* Subtle Depth Shadow - Replaced 3D extrusion */
+  --clay-text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+
+  --clay-text-3d: var(--clay-text-shadow);
+  --clay-text-3d-green: var(--clay-text-shadow);
+
+  /* Border Radius */
+  --clay-radius: 24px;
+
+  /* Spacing Scale */
+  --clay-space-1: 4px;
+  --clay-space-2: 8px;
+  --clay-space-3: 16px;
+  --clay-space-4: 24px;
+  --clay-space-5: 32px;
+  --clay-space-6: 48px;
+
+  /* Shadow System (Optimized for Darker Green) */
+  --clay-shadow-outer: 12px 12px 24px rgba(6, 95, 70, 0.12), 
+                       -12px -12px 24px rgba(255, 255, 255, 0.8);
+  
+  /* Combined Clay Shadow (The "Pillow" Effect) */
+  --clay-card-shadow: 10px 10px 20px rgba(6, 95, 70, 0.08),
+                      inset -8px -8px 12px rgba(6, 95, 70, 0.05),
+                      inset 8px 8px 12px rgba(255, 255, 255, 0.9);
+
+  --clay-button-shadow: 6px 6px 12px rgba(6, 95, 70, 0.15),
+                        inset -4px -4px 6px rgba(6, 95, 70, 0.08),
+                        inset 4px 4px 6px rgba(255, 255, 255, 0.8);
+
+  --clay-inset-shadow: inset 4px 4px 8px rgba(6, 95, 70, 0.12),
+                       inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+
+  /* Transitions & Animations */
+  --clay-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --clay-parallax: all 0.1s linear;
+}

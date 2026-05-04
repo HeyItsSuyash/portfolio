@@ -161,7 +161,6 @@ export default function RootsTimeline() {
                 <ul className={styles.highlights}>
                   {node.highlights.map((h, i) => (
                     <li key={i}>
-                      <span className={styles.bullet}>▹</span>
                       <span className={styles.text}>{h}</span>
                     </li>
                   ))}

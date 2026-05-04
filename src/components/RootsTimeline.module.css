@@ -1,8 +1,8 @@
 .timelineContainer {
   position: relative;
   max-width: 1000px;
-  margin: 40px auto 60px;
-  padding: 20px 40px;
+  margin: var(--clay-space-5) auto;
+  padding: var(--clay-space-5) 20px;
 }
 
 .timelineLine {
@@ -10,9 +10,12 @@
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 1px;
-  background: #1f1f1f;
+  width: 60px;
   transform: translateX(-50%);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 200" preserveAspectRatio="none"><path d="M30,0 C60,50 0,150 30,200" fill="none" stroke="%23f0f4f2" stroke-width="8" stroke-linecap="round"/></svg>');
+  background-repeat: repeat-y;
+  background-size: 100% 200px;
+  z-index: 1;
 }
 
 .node {
@@ -20,7 +23,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: var(--clay-space-6);
 }
 
 .node:last-child {
@@ -40,37 +43,32 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: var(--black, #0a0a0a);
-  border: 1px solid var(--accent, #e8f04a);
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent, #e8f04a);
+  color: var(--clay-primary);
   z-index: 2;
-  transition: background 0.3s, transform 0.3s;
+  box-shadow: var(--clay-card-shadow);
+  transition: var(--clay-transition);
 }
 
 .iconBox svg {
-  width: 20px;
-  height: 20px;
-}
-
-.node:hover .iconBox {
-  background: var(--accent, #e8f04a);
-  color: var(--black, #0a0a0a);
-  transform: translate(-50%, -50%) scale(1.1);
+  width: 28px;
+  height: 28px;
 }
 
 .content {
   width: calc(50% - 60px);
-  background: var(--black, #0a0a0a);
-  border: 1px solid #1f1f1f;
-  padding: 32px;
+  background: white;
+  padding: var(--clay-space-5);
+  border-radius: var(--clay-radius);
+  box-shadow: var(--clay-card-shadow);
   position: relative;
-  transition: background 0.2s, border-color 0.2s;
+  transition: var(--clay-transition);
 }
 
 .leftNode .content {
@@ -81,96 +79,30 @@
   text-align: left;
 }
 
-.content:hover {
-  background: #111;
-  border-color: #2a2a2a;
-}
-
-/* Connectors */
-.leftNode .content::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -8px;
-  transform: translateY(-50%);
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #1f1f1f;
-  transition: border-left-color 0.2s;
-}
-
-.leftNode .content::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -7px;
-  transform: translateY(-50%);
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-left: 7px solid var(--black, #0a0a0a);
-  z-index: 1;
-  transition: border-left-color 0.2s;
-}
-
-.leftNode .content:hover::after {
-  border-left-color: #2a2a2a;
-}
-
-.leftNode .content:hover::before {
-  border-left-color: #111;
-}
-
-.rightNode .content::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -8px;
-  transform: translateY(-50%);
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-right: 8px solid #1f1f1f;
-  transition: border-right-color 0.2s;
-}
-
-.rightNode .content::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -7px;
-  transform: translateY(-50%);
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-right: 7px solid var(--black, #0a0a0a);
-  z-index: 1;
-  transition: border-right-color 0.2s;
-}
-
-.rightNode .content:hover::after {
-  border-right-color: #2a2a2a;
-}
-
-.rightNode .content:hover::before {
-  border-right-color: #111;
-}
-
 .year {
-  font-family: 'Barlow Condensed', sans-serif;
-  color: var(--mid);
+  font-family: var(--clay-font), sans-serif;
+  color: var(--clay-primary);
+  background: var(--clay-bg);
+  padding: 6px 16px;
+  border-radius: 999px;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  width: fit-content;
+  display: inline-block;
+  box-shadow: var(--clay-inset-shadow);
 }
 
 .title {
-  font-family: 'Barlow Condensed', sans-serif;
-  color: var(--white);
-  font-size: 28px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-family: var(--clay-font), sans-serif;
+  color: var(--clay-text);
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: capitalize;
   margin-bottom: 16px;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .highlights {
@@ -179,21 +111,31 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .highlights li {
-  color: var(--mid);
-  font-size: 14px;
+  color: var(--clay-text-muted);
+  font-size: 15px;
   line-height: 1.5;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
+  position: relative;
+}
+
+.highlights li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--clay-primary);
+  border-radius: 50%;
+  margin-top: 8px;
+  flex-shrink: 0;
 }
 
 .leftNode .highlights li {
-  justify-content: flex-start;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 .rightNode .highlights li {
@@ -201,24 +143,25 @@
 }
 
 .bullet {
-  color: var(--accent);
-  font-family: monospace;
+  color: var(--clay-primary);
+  font-weight: bold;
 }
 
 /* Responsive Styles */
-@media (max-width: 900px) {
-  .timelineContainer {
-    padding: 20px;
-  }
-}
-
 @media (max-width: 768px) {
   .timelineLine {
-    left: 20px;
+    left: 30px;
   }
   
   .iconBox {
-    left: 20px;
+    left: 30px;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .iconBox svg {
+    width: 18px;
+    height: 18px;
   }
   
   .node {
@@ -226,9 +169,10 @@
   }
   
   .content {
-    width: calc(100% - 60px);
-    margin-left: 60px;
+    width: calc(100% - 80px);
+    margin-left: 80px;
     text-align: left;
+    padding: var(--clay-space-4);
   }
   
   .leftNode .content {
@@ -237,31 +181,9 @@
   
   .leftNode .highlights li {
     justify-content: flex-start;
-    flex-direction: row;
   }
-  
-  /* Reset arrow to the left side for left nodes on mobile to match orientation */
-  .leftNode .content::after {
-    right: auto;
-    left: -8px;
-    border-left: none;
-    border-right: 8px solid #1f1f1f;
-  }
-  
-  .leftNode .content::before {
-    right: auto;
-    left: -7px;
-    border-left: none;
-    border-right: 7px solid var(--black, #0a0a0a);
-  }
-  
-  .leftNode .content:hover::after {
-    border-left-color: transparent;
-    border-right-color: #2a2a2a;
-  }
-  
-  .leftNode .content:hover::before {
-    border-left-color: transparent;
-    border-right-color: #111;
+
+  .leftNode .year {
+    margin-left: 0;
   }
 }

@@ -1,4 +1,5 @@
 import styles from './Contact.module.css';
+import { playHoverPop, playClickThud } from '@/utils/audioUtils';
 
 const links = [
   { 
@@ -21,7 +22,7 @@ const links = [
   },
   { 
     label: 'Email', 
-    href: 'mailto:suyash@example.com',
+    href: 'mailto:yolo@suyashshukla.com',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
@@ -29,11 +30,11 @@ const links = [
     )
   },
   { 
-    label: 'Portfolio (EarnBuddy)', 
-    href: 'https://earnbuddy.io',
+    label: 'Phone', 
+    href: 'tel:+919450251336',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/>
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.59.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.47.57 3.59.12.35.03.74-.24 1.02l-2.2 2.2z"/>
       </svg>
     )
   },
@@ -50,51 +51,33 @@ export default function Contact() {
               Let&apos;s<br />Build<br /><span>Together.</span>
             </div>
             <div className={styles.ctaWrapper}>
-              <a href="mailto:suyash@example.com?subject=Let's Meet!" className={styles.ctaBtn}>
-                Book a Meeting ↗
+              <a href="mailto:yolo@suyashshukla.com?subject=Let's Meet!" className={`${styles.ctaBtn} gloss-effect`} onMouseEnter={playHoverPop} onClick={playClickThud}>
+                Book a Meeting
               </a>
             </div>
           </div>
 
           <div className={styles.right}>
-            <div className={styles.textLinks}>
+            <div className={styles.socialIcons}>
               {links.map((l) => (
                 <a
                   key={l.label}
-                  className={styles.textLink}
+                  className={`${styles.iconBtn} gloss-effect`}
                   href={l.href}
+                  onMouseEnter={playHoverPop}
+                  onClick={playClickThud}
                   target={l.href.startsWith('http') ? '_blank' : undefined}
                   rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  aria-label={l.label}
                 >
-                  <span>↗</span> {l.label}
+                  {l.icon}
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        <div className={styles.bottomSocial}>
-          <div className={styles.socialIcons}>
-            {links.map((l) => (
-              <a
-                key={l.label}
-                className={styles.iconLink}
-                href={l.href}
-                target={l.href.startsWith('http') ? '_blank' : undefined}
-                rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                aria-label={l.label}
-              >
-                {l.icon}
-              </a>
-            ))}
-          </div>
-        </div>
       </section>
-
-      <footer className={styles.footer}>
-        <p>Suyash Shukla — 2026</p>
-        <p>CS@MMMUT · DS@IIT Madras</p>
-      </footer>
     </div>
   );
 }

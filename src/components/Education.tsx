@@ -55,7 +55,6 @@ export default function Education() {
               <ul className={styles.achievements}>
                 {e.achievements.map((ach, idx) => (
                   <li key={idx}>
-                    <span className={styles.bullet}>▹</span>
                     <span className={styles.text}>{ach}</span>
                   </li>
                 ))}

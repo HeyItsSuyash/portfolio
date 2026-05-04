@@ -1,4 +1,12 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Projects.module.css';
+import { playHoverPop, playClickThud } from '@/utils/audioUtils';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -52,30 +60,82 @@ const projects = [
 ];
 
 export default function Projects() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!scrollRef.current || !containerRef.current) return;
+
+    const scrollContainer = scrollRef.current;
+    const totalWidth = scrollContainer.scrollWidth;
+    const viewportWidth = containerRef.current.offsetWidth;
+
+    // Horizontal Scroll Trigger
+    const scrollTween = gsap.to(scrollContainer, {
+      x: () => -(totalWidth - viewportWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: () => `+=${totalWidth - viewportWidth}`,
+        scrub: 1, // Add "scrub" for smooth inertia
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      }
+    });
+
+    // Inertia/Parallax effect on individual cards
+    const cards = scrollContainer.querySelectorAll(`.${styles.card}`);
+    cards.forEach((card) => {
+      gsap.fromTo(card, 
+        { rotateY: 20, scale: 0.9 },
+        { 
+          rotateY: -20, 
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            containerAnimation: scrollTween,
+            start: "left right",
+            end: "right left",
+            scrub: true
+          }
+        }
+      );
+    });
+
+    return () => {
+      scrollTween.kill();
+    };
+  }, []);
+
   return (
-    <section id="work">
+    <section id="work" className={styles.section} ref={containerRef}>
       <div className="section-header">
         <span className="section-label">02 — Projects</span>
       </div>
       <div className="section-title">Selected Work</div>
-      <div className={styles.grid}>
-        {projects.map((p) => (
-          <div key={p.num} className={styles.card}>
-            <div className={styles.cardNum}>Project — {p.num}</div>
-            <div className={styles.cardName}>{p.name}</div>
-            <p className={styles.cardDesc}>{p.desc}</p>
-            <div className={styles.tags}>
-              {p.tags.map((t) => (
-                <span key={t} className={styles.tag}>{t}</span>
-              ))}
+      <div className={styles.scrollWrapper}>
+        <div className={styles.grid} ref={scrollRef}>
+          {projects.map((p) => (
+            <div key={p.num} className={styles.card}>
+              <div className={styles.cardNum}>Project — {p.num}</div>
+              <div className={styles.cardName}>{p.name}</div>
+              <p className={styles.cardDesc}>{p.desc}</p>
+              <div className={styles.tags}>
+                {p.tags.map((t) => (
+                  <span key={t} className={styles.tag}>{t}</span>
+                ))}
+              </div>
+              {p.link && (
+                <a className={`${styles.link} gloss-effect`} href={p.link} target="_blank" rel="noopener noreferrer" onMouseEnter={playHoverPop} onClick={playClickThud}>
+                  {p.linkLabel}
+                </a>
+              )}
             </div>
-            {p.link && (
-              <a className={styles.link} href={p.link} target="_blank" rel="noopener noreferrer">
-                {p.linkLabel}
-              </a>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

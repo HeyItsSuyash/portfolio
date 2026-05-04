@@ -1,0 +1,99 @@
+@import './variables.css';
+
+/* Base Body Styles */
+body {
+  background-color: var(--clay-bg);
+  color: var(--clay-text);
+  transition: var(--clay-transition);
+}
+
+/* Reusable Clay Classes */
+
+/* Primary Raised Element (Cards) */
+.clay-card {
+  background: var(--clay-surface);
+  border-radius: var(--clay-radius);
+  box-shadow: var(--clay-card-shadow);
+  padding: var(--clay-space-4);
+  transition: var(--clay-transition);
+}
+
+/* Secondary/Interactive Element (Buttons) */
+.clay-button {
+  background: var(--clay-primary);
+  color: white;
+  border: none;
+  border-radius: 9999px; /* Pill-shaped */
+  padding: var(--clay-space-2) var(--clay-space-4);
+  box-shadow: var(--clay-button-shadow);
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--clay-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.clay-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 30%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine-forward 3s infinite;
+  pointer-events: none;
+}
+
+.clay-button:active {
+  box-shadow: var(--clay-inset-shadow);
+  transform: scale(0.98);
+}
+
+/* Inset Element (Inputs) */
+.clay-input {
+  background: var(--clay-bg);
+  border: none;
+  border-radius: var(--clay-radius);
+  padding: var(--clay-space-3);
+  box-shadow: var(--clay-inset-shadow);
+  width: 100%;
+  color: var(--clay-text);
+  outline: none;
+  transition: var(--clay-transition);
+}
+
+.clay-input:focus {
+  box-shadow: var(--clay-inset-shadow), 0 0 0 2px var(--clay-primary);
+}
+
+/* Floating Clay (Navbar) */
+.clay-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: var(--clay-radius);
+  box-shadow: var(--clay-card-shadow);
+  transition: var(--clay-transition);
+}
+
+/* Typography Helpers */
+.clay-title {
+  color: var(--clay-text);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.clay-muted {
+  color: var(--clay-text-muted);
+}

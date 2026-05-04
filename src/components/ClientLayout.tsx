@@ -5,29 +5,15 @@ import Nav from '@/components/Nav';
 import CustomCursor from '@/components/CustomCursor';
 import ParticlesBackground from '@/components/ParticlesBackground';
 import ScrollToTop from '@/components/ScrollToTop';
+import FloatingShapes from '@/components/FloatingShapes';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import { scrambleText } from '@/utils/gsapUtils';
+import { playRevealSweep, playSoftClick, playScrollSound } from '@/utils/audioUtils';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    // Scramble Text for Headings
-    const headingSelectors = ['.section-title', '[class*="heroTitle"]', '[class*="sectionTitle"]'];
-    headingSelectors.forEach(selector => {
-      const headings = document.querySelectorAll(selector);
-      headings.forEach(heading => {
-        const text = (heading as HTMLElement).innerText;
-        ScrollTrigger.create({
-          trigger: heading,
-          start: 'top 90%',
-          onEnter: () => scrambleText(heading as HTMLElement, text, 1.5),
-          once: true
-        });
-      });
-    });
 
     // Global reveal animation for sections
     const sections = document.querySelectorAll('section');
@@ -35,17 +21,22 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       gsap.fromTo(section, 
         { 
           opacity: 0, 
-          y: 20 
+          y: 100,
+          scale: 0.8
         }, 
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          ease: 'power2.out',
+          scale: 1,
+          duration: 1.2,
+          ease: 'expo.out',
           scrollTrigger: {
             trigger: section,
             start: 'top 90%',
-            toggleActions: 'play none none none'
+            toggleActions: 'play none none none',
+            onEnter: () => {
+              playRevealSweep();
+            }
           }
         }
       );
@@ -57,13 +48,14 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       const elements = document.querySelectorAll(selector);
       if (elements.length > 0) {
         gsap.fromTo(elements,
-          { opacity: 0, y: 15 },
+          { opacity: 0, y: 50, scale: 0.7 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.5,
-            stagger: 0.08,
-            ease: 'power2.out',
+            scale: 1,
+            duration: 1,
+            stagger: 0.1,
+            ease: 'back.out(1.2)',
             scrollTrigger: {
               trigger: elements[0],
               start: 'top 95%',
@@ -74,12 +66,28 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       }
     });
 
+    // Scroll sound system
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (Math.abs(currentScrollY - lastScrollY) > 150) {
+        playScrollSound();
+        lastScrollY = currentScrollY;
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
   }, []);
 
   return (
     <>
       <CustomCursor />
       <ParticlesBackground />
+      <FloatingShapes />
       <Nav />
       {children}
       <ScrollToTop />

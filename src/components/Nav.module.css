@@ -1,17 +1,20 @@
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1200px;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
-  background: rgba(10, 10, 10, 0.7);
+  padding: 12px 32px;
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 0.3s, padding 0.3s;
+  border-radius: var(--clay-radius);
+  box-shadow: var(--clay-card-shadow);
+  transition: var(--clay-transition);
 }
 
 .navGroup {
@@ -21,100 +24,157 @@
 }
 
 .logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
+  font-family: var(--clay-font), sans-serif;
+  font-weight: 800;
   font-size: 24px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--white);
+  letter-spacing: -0.02em;
+  color: var(--clay-text);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  object-fit: contain;
+  transition: var(--clay-transition);
+}
+
+.logo:hover .logoImage {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .links {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   align-items: center;
 }
 
 .links a {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 15px; /* Increased size */
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mid);
+  font-family: var(--clay-font), sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--clay-text-muted);
   text-decoration: none;
-  transition: color 0.15s, opacity 0.15s;
+  transition: var(--clay-transition);
+  padding: 8px 16px;
+  border-radius: 999px;
 }
 
 .links a:hover {
-  color: var(--accent);
+  color: var(--clay-primary);
+  background: white;
+  box-shadow: var(--clay-button-shadow);
+  transform: scale(1.05);
 }
 
-.links .navCta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  background: var(--accent);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  color: #000 !important;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: opacity 0.2s, transform 0.2s;
-  border-radius: 0;
-}
-
-/* Duplicated for the navGroup placement */
 .navCta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background: var(--accent);
+  background: var(--clay-primary);
   border: none;
-  padding: 10px 22px;
+  padding: 10px 24px;
   cursor: pointer;
-  color: #000 !important;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
+  color: white !important;
+  font-family: var(--clay-font), sans-serif;
+  font-weight: 700;
   font-size: 14px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  transition: opacity 0.2s, transform 0.2s;
+  border-radius: 999px;
+  box-shadow: var(--clay-button-shadow);
+  transition: var(--clay-transition);
+  position: relative;
+  overflow: hidden;
 }
 
 .navCta:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
+  background: var(--clay-primary-light);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+.navCta:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--clay-inset-shadow);
 }
 
 .mobileToggle {
   display: none;
   background: none;
   border: none;
-  color: var(--white);
+  color: var(--clay-text);
   font-size: 28px;
   cursor: pointer;
   padding: 8px;
   z-index: 1001;
+  border-radius: var(--clay-radius);
+  transition: var(--clay-transition);
+}
+
+.mobileToggle:active {
+  box-shadow: var(--clay-inset-shadow);
+}
+
+.pizzaCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--clay-primary);
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: var(--clay-font), sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: var(--clay-button-shadow);
+  transition: var(--clay-transition);
+  margin-left: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pizzaCta:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: #10b981; /* Brighter green shade */
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+}
+
+.pizzaIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pizzaCta:hover .pizzaIcon {
+  animation: spinOnce 0.8s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+
+@keyframes spinOnce {
+  0% { transform: rotate(0deg); }
+  30% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* ── RESPONSIVE ── */
+
 @media (max-width: 1024px) {
   .links {
-    gap: 20px;
+    gap: 16px;
+  }
+  .nav {
+    width: calc(100% - 32px);
+    padding: 10px 24px;
   }
 }
 
 @media (max-width: 768px) {
   .nav {
-    padding: 14px 20px;
+    top: 16px;
+    padding: 8px 20px;
   }
   
   .mobileToggle {
@@ -123,36 +183,41 @@
 
   .links {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 300px;
-    background: #0a0a0a;
+    top: 80px;
+    right: 16px;
+    width: 260px;
+    background: var(--clay-bg);
     flex-direction: column;
-    padding: 100px 40px;
-    gap: 32px;
-    align-items: flex-start;
-    transform: translateX(100%);
+    padding: 32px;
+    gap: 16px;
+    align-items: stretch;
+    border-radius: var(--clay-radius);
+    box-shadow: var(--clay-card-shadow);
+    transform: translateY(-20px);
     visibility: hidden;
     opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+    transition: var(--clay-transition);
     z-index: 100;
   }
 
   .linksOpen {
-    transform: translateX(0);
+    transform: translateY(0);
     visibility: visible;
     opacity: 1;
   }
   
   .navGroup .navCta {
-    display: none; /* Hide in group, will show in drawer */
+    display: none;
   }
 
   .links .navCta {
     display: flex;
     width: 100%;
     margin: 0;
+  }
+
+  .links a {
+    text-align: center;
+    padding: 12px;
   }
 }
