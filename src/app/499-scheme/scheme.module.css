@@ -19,7 +19,6 @@
   line-height: 1.1;
   color: var(--clay-text);
   margin-bottom: 32px;
-  text-shadow: var(--clay-text-3d);
 }
 
 .context {
@@ -40,8 +39,6 @@
 .contentBlock {
   background: white;
   padding: var(--clay-space-5);
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   transition: var(--clay-transition);
 }
 
@@ -67,8 +64,6 @@
   width: 12px;
   height: 12px;
   background: var(--clay-primary);
-  border-radius: 50%;
-  box-shadow: var(--clay-button-shadow);
 }
 
 .contentBlock p, .contentBlock li {
@@ -101,7 +96,6 @@
   font-weight: 800;
   color: var(--clay-primary);
   margin: 0;
-  text-shadow: var(--clay-text-3d);
 }
 
 .subtext {
@@ -113,8 +107,6 @@
 .formSection {
   background: white;
   padding: var(--clay-space-6);
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   margin-bottom: 80px;
 }
 
@@ -124,7 +116,6 @@
   font-weight: 800;
   margin-bottom: 40px;
   color: var(--clay-text);
-  text-shadow: var(--clay-text-3d);
 }
 
 .form {
@@ -156,15 +147,12 @@
   color: var(--clay-text);
   font-family: var(--clay-font), sans-serif;
   font-size: 16px;
-  border-radius: 20px;
-  box-shadow: var(--clay-inset-shadow);
   transition: var(--clay-transition);
 }
 
 .field textarea:focus, .field input:focus, .field select:focus {
   outline: none;
   background: white;
-  box-shadow: var(--clay-button-shadow);
 }
 
 .field textarea {
@@ -179,8 +167,6 @@
   cursor: pointer;
   padding: 16px;
   background: var(--clay-bg);
-  border-radius: 16px;
-  box-shadow: var(--clay-inset-shadow);
 }
 
 .checkboxField input {
@@ -207,9 +193,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 18px;
-  border-radius: 999px;
   cursor: pointer;
-  box-shadow: var(--clay-button-shadow);
   transition: var(--clay-transition);
   width: fit-content;
   align-self: flex-start;
@@ -218,19 +202,15 @@
 .submitBtn:hover {
   transform: translateY(-4px) scale(1.05);
   background: var(--clay-primary-light);
-  box-shadow: 0 10px 20px rgba(6, 95, 70, 0.3);
 }
 
 .submitBtn:active {
   transform: translateY(0) scale(0.95);
-  box-shadow: var(--clay-inset-shadow);
 }
 
 .nextSection {
   background: white;
   padding: var(--clay-space-6);
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
 }
 
 .nextContent {
@@ -261,12 +241,10 @@
   background: white;
   color: var(--clay-primary);
   padding: 16px 32px;
-  border-radius: 999px;
   text-decoration: none;
   font-family: var(--clay-font), sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  box-shadow: var(--clay-button-shadow);
   transition: var(--clay-transition);
 }
 

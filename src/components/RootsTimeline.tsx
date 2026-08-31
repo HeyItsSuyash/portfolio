@@ -1,4 +1,5 @@
 import styles from './RootsTimeline.module.css';
+import Telescope3D from '@/components/Telescope3D';
 
 const timelineData = [
   {
@@ -138,14 +139,19 @@ const timelineData = [
   }
 ];
 
-export default function RootsTimeline() {
+export default function RootsTimeline({ id = 'what' }: { id?: string }) {
   return (
-    <section id="roots">
+    <section id={id} className="snap-section">
       <div className="section-header">
         <span className="section-label">Roots — Origins</span>
       </div>
       <div className="section-title">My Roots in STEM</div>
-      
+
+      {/* 3D Telescope Model Canvas */}
+      <div style={{ width: '100%', maxWidth: '380px', height: '320px', margin: '0 auto 20px' }}>
+        <Telescope3D />
+      </div>
+
       <div className={styles.timelineContainer}>
         <div className={styles.timelineLine}></div>
         {timelineData.map((node, index) => {

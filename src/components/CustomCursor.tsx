@@ -1,36 +1,49 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ x: -100, y: -100 });
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (cursorRef.current) {
-        // Center the 40px by 40px cursor (20px offset)
-        cursorRef.current.style.transform = `translate3d(${e.clientX - 20}px, ${e.clientY - 20}px, 0)`;
-
-        // Determine context color
-        const target = e.target as Element;
-        if (target && target.closest) {
-          const isLight = target.closest('.light-section');
-          // If over a light section, make cursor green. Otherwise white.
-          if (isLight) {
-            cursorRef.current.style.backgroundColor = 'var(--clay-primary)';
-          } else {
-            cursorRef.current.style.backgroundColor = 'white';
-          }
-        }
-      }
+    const handlePointerMove = (e: PointerEvent) => {
+      setPos({ x: e.clientX, y: e.clientY });
+      if (!visible) setVisible(true);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    const handleMouseLeave = () => setVisible(false);
+
+    window.addEventListener('pointermove', handlePointerMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [visible]);
 
-  return <div ref={cursorRef} className="custom-cursor" />;
+  if (!visible) return null;
+
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        pointerEvents: 'none',
+        zIndex: 2147483647,
+        transform: `translate3d(${pos.x}px, ${pos.y}px, 0) translate(-50%, -50%) rotate(-30deg)`,
+        transition: 'transform 0.02s linear',
+        filter: 'drop-shadow(0 0 8px rgba(245, 245, 220, 0.45)) drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.7))',
+      }}
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <polygon
+          points="12,2 22,22 2,22"
+          fill="#E5E5C8"
+        />
+      </svg>
+    </div>
+  );
 }

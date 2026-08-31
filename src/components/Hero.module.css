@@ -1,4 +1,6 @@
 .hero {
+  width: 100%;
+  min-height: 100vh;
   height: 100vh;
   padding: 0;
   display: flex;
@@ -6,7 +8,41 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: var(--clay-primary);
+  background-color: #030712;
+}
+
+/* Background Layer IS IMAGE, FIXED */
+.skyLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/portfolio_header.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Atmospheric Glow / Star Lens Bloom Layer */
+.nebulaLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 62% 24%, rgba(255, 255, 255, 0.4) 0%, rgba(56, 189, 248, 0.15) 3%, transparent 12%),
+    radial-gradient(circle at 35% 18%, rgba(255, 255, 255, 0.3) 0%, rgba(245, 245, 220, 0.12) 2%, transparent 8%),
+    radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.45) 0%, rgba(147, 197, 253, 0.18) 3%, transparent 10%),
+    radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.06) 0%, transparent 60%);
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.25));
+  will-change: transform;
 }
 
 .bgName {
@@ -14,13 +50,52 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: var(--clay-font), sans-serif;
-  font-weight: 800;
-  font-size: 25vw;
-  color: rgba(255, 255, 255, 0.2); /* More opaque */
+  font-family: var(--clay-heading-font), serif;
+  font-weight: 400;
+  color: #F5F5DC;
+  opacity: 1;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
   white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  will-change: transform, opacity;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.nameText {
+  font-size: 20vw;
+  line-height: 0.9;
+  width: 100%;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  width: auto;
+  text-align: center;
+  font-size: clamp(0.75rem, 1.2vw, 1.3rem);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  font-family: var(--font-raleway), sans-serif;
+  text-transform: uppercase;
+  color: #F5F5DC;
+  opacity: 0.9;
+  margin-top: 15px;
+  will-change: transform, opacity;
+}
+
+.emphasis {
+  font-family: var(--font-playwrite-dela), cursive;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .container {
@@ -62,26 +137,29 @@
 
 .definition {
   position: absolute;
-  bottom: 50px;
-  right: 60px;
+  bottom: 30px;
+  right: 30px;
+  background: transparent;
+  padding: 0;
+  border: none;
   max-width: 320px;
   z-index: 10;
   color: white;
-  font-family: var(--clay-font), sans-serif;
+  font-family: var(--clay-heading-font), sans-serif;
   text-align: right;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  will-change: transform, opacity;
 }
 
 .defWord {
   font-weight: 800;
-  font-size: 28px;
+  font-size: 22px;
   margin-bottom: 2px;
   color: white;
 }
 
 .phonetic {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   opacity: 0.7;
   margin-left: 10px;
   font-family: serif; /* Better for phonetic symbols */
@@ -89,14 +167,14 @@
 
 .defType {
   font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.6;
   margin-bottom: 12px;
   letter-spacing: 0.05em;
 }
 
 .defMeaning {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: 0.8;
   font-weight: 500;
@@ -113,4 +191,20 @@
   .defWord { font-size: 22px; }
   .phonetic { font-size: 16px; }
   .defMeaning { font-size: 14px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  
 }

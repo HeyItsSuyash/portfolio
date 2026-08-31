@@ -1,29 +1,36 @@
 'use client';
 
-import { useEffect } from 'react';
+import CustomCursor from "@/components/CustomCursor";
+
+import { useEffect, useState } from 'react';
 import Nav from '@/components/Nav';
-import CustomCursor from '@/components/CustomCursor';
-import ParticlesBackground from '@/components/ParticlesBackground';
-import ScrollToTop from '@/components/ScrollToTop';
-import FloatingShapes from '@/components/FloatingShapes';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { playRevealSweep, playSoftClick, playScrollSound } from '@/utils/audioUtils';
 
+import BgmController from '@/components/BgmController';
+import LoadingScreen from '@/components/LoadingScreen';
+
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
+  const [isGalaxyMode, setIsGalaxyMode] = useState(false);
+
+  useEffect(() => {
+    const handleGalaxy = (e: Event) => {
+      const customEv = e as CustomEvent<{ active: boolean }>;
+      setIsGalaxyMode(customEv.detail.active);
+    };
+    window.addEventListener('toggle-galaxy-mode', handleGalaxy);
+    return () => window.removeEventListener('toggle-galaxy-mode', handleGalaxy);
+  }, []);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     // Global reveal animation for sections
     const sections = document.querySelectorAll('section');
     sections.forEach((section) => {
-      gsap.fromTo(section, 
-        { 
-          opacity: 0, 
-          y: 100,
-          scale: 0.8
-        }, 
+      gsap.fromTo(section, { opacity: 1 }, 
         {
           opacity: 1,
           y: 0,
@@ -85,12 +92,28 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   return (
     <>
+      <LoadingScreen />
       <CustomCursor />
-      <ParticlesBackground />
-      <FloatingShapes />
+      <BgmController />
+      {!isGalaxyMode && (
+        <img 
+          src="/images/logo.png" 
+          alt="Watermark Logo" 
+          style={{
+            position: 'fixed',
+            top: '24px',
+            left: '32px',
+            width: '36px',
+            height: 'auto',
+            zIndex: 99,
+            opacity: 0.75,
+            pointerEvents: 'none',
+          }} 
+        />
+      )}
+      
       <Nav />
       {children}
-      <ScrollToTop />
     </>
   );
 }

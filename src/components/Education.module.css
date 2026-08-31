@@ -10,8 +10,6 @@
 .card {
   background: white;
   padding: var(--clay-space-5);
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   position: relative;
   z-index: 10;
   display: flex;
@@ -22,7 +20,6 @@
 .card:hover {
   transform: translateY(-10px) scale(1.02);
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
 }
 
 .label {
@@ -34,10 +31,8 @@
   color: white;
   background: var(--clay-primary);
   padding: 6px 18px;
-  border-radius: 999px;
   width: fit-content;
   margin-bottom: var(--clay-space-3);
-  box-shadow: var(--clay-button-shadow);
 }
 
 .school {
@@ -83,7 +78,6 @@
   width: 6px;
   height: 6px;
   background: var(--clay-primary);
-  border-radius: 50%;
   margin-top: 8px;
   flex-shrink: 0;
 }

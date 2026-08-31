@@ -19,8 +19,6 @@
   max-width: 500px;
   position: relative;
   padding: 48px;
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   transition: var(--clay-transition);
   animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -39,13 +37,11 @@
   color: var(--clay-text-muted);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: var(--clay-button-shadow);
   transition: var(--clay-transition);
 }
 
@@ -89,8 +85,6 @@
   width: 10px;
   height: 10px;
   background: var(--clay-primary);
-  border-radius: 50%;
-  box-shadow: var(--clay-button-shadow);
 }
 
 .howItWorks li {
@@ -113,21 +107,18 @@
   color: white;
   border: none;
   padding: 16px;
-  border-radius: 999px;
   font-family: var(--clay-font), sans-serif;
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
-  box-shadow: var(--clay-button-shadow);
   transition: var(--clay-transition);
 }
 
 .actionBtn:hover {
   background: var(--clay-primary-light);
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
 }
 
 /* Form Styles */
@@ -155,15 +146,12 @@
   padding: 16px;
   color: var(--clay-text);
   font-family: var(--clay-font), sans-serif;
-  border-radius: 16px;
-  box-shadow: var(--clay-inset-shadow);
   transition: var(--clay-transition);
 }
 
 .field input:focus, .field textarea:focus {
   outline: none;
   background: white;
-  box-shadow: var(--clay-button-shadow);
 }
 
 .checkboxField {
@@ -173,8 +161,6 @@
   cursor: pointer;
   padding: 12px;
   background: var(--clay-bg);
-  border-radius: 12px;
-  box-shadow: var(--clay-inset-shadow);
 }
 
 .checkboxField input {
@@ -195,12 +181,10 @@
   border: none;
   color: var(--clay-text-muted);
   padding: 16px;
-  border-radius: 999px;
   font-family: var(--clay-font), sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: var(--clay-button-shadow);
   transition: var(--clay-transition);
 }
 
@@ -210,12 +194,10 @@
   color: white;
   border: none;
   padding: 16px;
-  border-radius: 999px;
   font-family: var(--clay-font), sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: var(--clay-button-shadow);
   transition: var(--clay-transition);
 }
 

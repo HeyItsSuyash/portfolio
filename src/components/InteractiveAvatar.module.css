@@ -43,7 +43,6 @@
   width: 70%;
   height: 40px;
   background: radial-gradient(ellipse at center, rgba(4, 120, 87, 0.2) 0%, rgba(4, 120, 87, 0) 70%);
-  border-radius: 50%;
   z-index: 0;
   filter: blur(10px);
 }

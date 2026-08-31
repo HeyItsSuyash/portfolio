@@ -12,8 +12,6 @@
   align-items: center;
   padding: var(--clay-space-3) var(--clay-space-4);
   background: white;
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   gap: 24px;
   transition: var(--clay-transition);
 }
@@ -21,7 +19,6 @@
 .item:hover {
   transform: translateX(12px) scale(1.01);
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1);
 }
 
 .icon {
@@ -33,11 +30,9 @@
   color: white;
   background: var(--clay-primary);
   padding: 8px 18px;
-  border-radius: 999px;
   flex-shrink: 0;
   min-width: 110px;
   text-align: center;
-  box-shadow: var(--clay-button-shadow);
 }
 
 .text {

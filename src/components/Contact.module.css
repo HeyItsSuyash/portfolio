@@ -13,8 +13,6 @@
 .inner {
   background: white;
   padding: var(--clay-space-6);
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +40,6 @@
 
 .big span {
   color: var(--clay-primary);
-  text-shadow: var(--clay-text-shadow);
 }
 
 .ctaWrapper {
@@ -57,18 +54,15 @@
   background: var(--clay-primary);
   color: white;
   padding: 16px 40px;
-  border-radius: 999px;
   font-family: var(--clay-font), sans-serif;
   font-weight: 700;
   font-size: 18px;
-  box-shadow: var(--clay-button-shadow);
   transition: var(--clay-transition);
 }
 
 .ctaBtn:hover {
   transform: translateY(-4px);
   background: var(--clay-primary-light);
-  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
 }
 
 .socialIcons {
@@ -81,12 +75,10 @@
   width: 64px;
   height: 64px;
   background: white;
-  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--clay-primary);
-  box-shadow: var(--clay-button-shadow);
   transition: var(--clay-transition);
 }
 
@@ -99,7 +91,6 @@
   transform: translateY(-5px) scale(1.1);
   background: var(--clay-primary);
   color: white;
-  box-shadow: 0 10px 20px rgba(6, 78, 59, 0.2);
 }
 
 @media (max-width: 900px) {

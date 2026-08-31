@@ -10,15 +10,12 @@
 .group {
   background: white;
   padding: var(--clay-space-5);
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   transition: var(--clay-transition);
 }
 
 .group:hover {
   transform: translateY(-8px) scale(1.02);
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
 }
 
 .group h3 {
@@ -39,8 +36,6 @@
   width: 14px;
   height: 14px;
   background: var(--clay-primary);
-  border-radius: 50%;
-  box-shadow: var(--clay-button-shadow);
 }
 
 .list {
@@ -58,15 +53,12 @@
   color: var(--clay-text-muted);
   background: var(--clay-bg);
   padding: 8px 18px;
-  border-radius: 999px;
-  box-shadow: var(--clay-inset-shadow);
   transition: var(--clay-transition);
 }
 
 .list li:hover {
   color: white;
   background: var(--clay-primary);
-  box-shadow: var(--clay-button-shadow);
   transform: scale(1.1) rotate(1deg);
 }
 

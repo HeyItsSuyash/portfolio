@@ -12,8 +12,6 @@
 
 .dualCard {
   background: white;
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   overflow: hidden;
@@ -52,9 +50,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 6px 16px;
-  border-radius: 999px;
   width: fit-content;
-  box-shadow: var(--clay-button-shadow);
 }
 
 .tag { background: white; color: var(--clay-primary); }
@@ -92,7 +88,6 @@
   font-size: 32px;
   color: var(--clay-primary);
   line-height: 1;
-  text-shadow: var(--clay-text-shadow);
 }
 
 .statLabel {

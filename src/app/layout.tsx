@@ -2,17 +2,41 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './variables.css';
 import './components.css';
+import { Bodoni_Moda, Raleway, Metamorphous, Playwrite_DE_LA_Guides } from 'next/font/google';
+
+const bodoni = Bodoni_Moda({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--clay-heading-font',
+});
+
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-raleway',
+});
+
+const metamorphous = Metamorphous({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-metamorphous',
+});
+
+const playwrite = Playwrite_DE_LA_Guides({
+  weight: '400',
+  variable: '--font-playwrite-dela',
+});
+
 import Nav from '@/components/Nav';
-import CustomCursor from '@/components/CustomCursor';
-import ParticlesBackground from '@/components/ParticlesBackground';
-import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata: Metadata = {
   title: 'Suyash Shukla | Portfolio | Building @ ₹499',
   description:
     'Full-stack engineer, ML practitioner & founder. Built Prayukti vLAB (400+ users), EarnBuddy SaaS (1000+ users), Voice AI agents, and published LLM research with Taylor & Francis. CS @ MMMUT Gorakhpur | Data Science @ IIT Madras.',
   icons: {
-    icon: '/logo.ico',
+    icon: '/images/logo.ico',
+    shortcut: '/images/logo.ico',
+    apple: '/images/logo.ico',
   },
   keywords: [
     'Suyash Shukla',
@@ -69,8 +93,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={`${bodoni.variable} ${raleway.variable} ${metamorphous.variable} ${playwrite.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <ClientLayout>
           {children}
         </ClientLayout>

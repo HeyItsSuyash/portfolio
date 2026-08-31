@@ -12,8 +12,6 @@ body {
 /* Primary Raised Element (Cards) */
 .clay-card {
   background: var(--clay-surface);
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   padding: var(--clay-space-4);
   transition: var(--clay-transition);
 }
@@ -23,9 +21,8 @@ body {
   background: var(--clay-primary);
   color: white;
   border: none;
-  border-radius: 9999px; /* Pill-shaped */
+/* Pill-shaped */
   padding: var(--clay-space-2) var(--clay-space-4);
-  box-shadow: var(--clay-button-shadow);
   cursor: pointer;
   font-weight: 600;
   display: inline-flex;
@@ -57,7 +54,6 @@ body {
 }
 
 .clay-button:active {
-  box-shadow: var(--clay-inset-shadow);
   transform: scale(0.98);
 }
 
@@ -65,9 +61,7 @@ body {
 .clay-input {
   background: var(--clay-bg);
   border: none;
-  border-radius: var(--clay-radius);
   padding: var(--clay-space-3);
-  box-shadow: var(--clay-inset-shadow);
   width: 100%;
   color: var(--clay-text);
   outline: none;
@@ -75,15 +69,12 @@ body {
 }
 
 .clay-input:focus {
-  box-shadow: var(--clay-inset-shadow), 0 0 0 2px var(--clay-primary);
 }
 
 /* Floating Clay (Navbar) */
 .clay-nav {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  border-radius: var(--clay-radius);
-  box-shadow: var(--clay-card-shadow);
   transition: var(--clay-transition);
 }
 

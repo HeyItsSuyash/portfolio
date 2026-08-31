@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large local assets
+/large_folder/
+/public/models/
+public/sounds/*.mp3
+!public/sounds/koiroylers-gear-click-351962.mp3
+
