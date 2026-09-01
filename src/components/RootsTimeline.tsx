@@ -3,7 +3,16 @@
 import React from 'react';
 import styles from './RootsTimeline.module.css';
 
-export const TIMELINE_DATA = [
+export interface TimelineEntry {
+  id: string;
+  year: string;
+  collegeTag?: 'Freshman' | 'Sophomore' | 'Junior' | 'Senior';
+  title: string;
+  highlights: string[];
+  icon: React.ReactNode;
+}
+
+export const TIMELINE_DATA: TimelineEntry[] = [
   {
     id: 'class6',
     year: 'Class 6 (2016–17)',
@@ -112,6 +121,7 @@ export const TIMELINE_DATA = [
   {
     id: 'early_college',
     year: '2023–2024',
+    collegeTag: 'Freshman',
     title: 'Early College & Experimentation',
     highlights: [
       'Built websites for NGOs and small projects while trying out tools like Shopify, Twilio, and prompt engineering.',
@@ -127,6 +137,7 @@ export const TIMELINE_DATA = [
   {
     id: 'community_leadership',
     year: '2024',
+    collegeTag: 'Freshman',
     title: 'Community & Student Tech',
     highlights: [
       'Helped organize technical events and hackathons with HackWithIndia and the CSIS society at MMMUT.',
@@ -142,10 +153,11 @@ export const TIMELINE_DATA = [
   {
     id: 'products_infrastructure',
     year: '2024–2025',
+    collegeTag: 'Sophomore',
     title: 'Building Products & Systems',
     highlights: [
       'Founded Laterally Inverted Studio as a maker collaborative to build real-world software and experiments.',
-      'Built and maintained platforms like Prayukti vLAB (funded by a ₹10 Lakh college grant) for student simulations.',
+      'Built and maintained platforms like Prayukti vLAB for student simulations.',
       'Shifted toward managing real system deployments, database performance, and multi-user reliability.'
     ],
     icon: (
@@ -157,6 +169,7 @@ export const TIMELINE_DATA = [
   {
     id: 'startup_experience',
     year: '2025',
+    collegeTag: 'Sophomore',
     title: 'Startup & Product Ownership',
     highlights: [
       'Co-founded EarnBuddy.io, managing the product stack and scaling to 500+ registered users across multiple colleges.',
@@ -172,6 +185,7 @@ export const TIMELINE_DATA = [
   {
     id: 'research_and_ai',
     year: '2025–2026',
+    collegeTag: 'Junior',
     title: 'Research & Applied AI',
     highlights: [
       'Conducted research on bias detection and fairness in LLMs, published with Taylor & Francis.',
@@ -187,6 +201,7 @@ export const TIMELINE_DATA = [
   {
     id: 'professional_engineering',
     year: '2026',
+    collegeTag: 'Junior',
     title: 'Professional Software Engineering',
     highlights: [
       'Worked as Full Stack Engineer at Exaflair Technologies on production web and mobile apps with Next.js, Fastify, and PostgreSQL.',
@@ -202,6 +217,7 @@ export const TIMELINE_DATA = [
   {
     id: 'present',
     year: 'Present',
+    collegeTag: 'Senior',
     title: 'Still Building',
     highlights: [
       'Focusing on full-stack systems, developer tooling, and reliable AI applications.',
@@ -235,7 +251,12 @@ export default function RootsTimeline() {
             >
               <div className={styles.iconBox}>{node.icon}</div>
               <div className={styles.content}>
-                <div className={styles.year}>{node.year}</div>
+                <div className={styles.headerGroup}>
+                  <div className={styles.year}>{node.year}</div>
+                  {node.collegeTag && (
+                    <span className={styles.collegeTag}>{node.collegeTag}</span>
+                  )}
+                </div>
                 <div className={styles.title}>{node.title}</div>
                 <ul className={styles.highlights}>
                   {node.highlights.map((h, i) => (

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './variables.css';
 import './components.css';
-import { Bodoni_Moda, Raleway, Metamorphous } from 'next/font/google';
+import { Bodoni_Moda, Raleway, Metamorphous, Outfit, Cormorant_Garamond } from 'next/font/google';
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -20,6 +20,19 @@ const metamorphous = Metamorphous({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-metamorphous',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-outfit',
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
 });
 
 import Nav from '@/components/Nav';
@@ -88,7 +101,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${bodoni.variable} ${raleway.variable} ${metamorphous.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${bodoni.variable} ${raleway.variable} ${metamorphous.variable} ${outfit.variable} ${cormorant.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <ClientLayout>
           {children}
@@ -97,5 +110,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

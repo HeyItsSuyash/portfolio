@@ -49,13 +49,16 @@
   line-height: 1.05;
 }
 
+/* Google Sans Subtitle */
 .subHeading {
-  font-family: 'Cinzel', var(--clay-heading-font), serif;
-  font-size: clamp(18px, 2.2vw, 24px);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: rgba(245, 245, 220, 0.9);
-  margin: 0;
+  font-family: var(--font-google-sans), sans-serif !important;
+  font-size: clamp(15px, 1.8vw, 19px);
+  font-weight: 400 !important;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  color: rgba(245, 245, 220, 0.82);
+  margin: 4px 0 0 0;
+  max-width: 850px;
 }
 
 .narrativeQuote {
@@ -207,7 +210,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  flex: 1;
+  flex-content: 1;
 }
 
 .questionIndex {
@@ -360,4 +363,3 @@
     display: none;
   }
 }
-

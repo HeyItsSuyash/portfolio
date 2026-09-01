@@ -3,270 +3,270 @@
     "id": "why-should-we-hire-you",
     "question": "Why should we hire you?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I bring hands-on experience building and shipping full-stack and AI products, not just studying them. I've worked across the stack, from Rust backends to Next.js frontends to LLM integrations, and taken products from zero to real users. I move fast, learn what I don't know, and take ownership of outcomes rather than just tasks. That combination of speed, range, and accountability is what I'd bring to this role."
   },
   {
     "id": "why-are-you-a-good-fit",
     "question": "Why are you a good fit for this role?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I've spent the last year building production systems for startups and my own projects, so I understand what it takes to ship under real constraints. I'm comfortable owning a problem end to end, from architecture to deployment to monitoring. I also work well with non-technical stakeholders, since I've onboarded customers and gathered feedback directly. That mix of technical depth and product sense fits what this role needs."
   },
   {
     "id": "what-makes-you-different",
     "question": "What makes you different from other candidates?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Most candidates my age have either built things or studied things. I've done both at the same time, running a technical society, co-founding a startup, working with two companies, and keeping up two degrees, all in parallel. That taught me how to manage priorities under pressure without dropping quality. I bring that same discipline to every project I take on."
   },
   {
     "id": "why-should-we-choose-you",
     "question": "Why should we choose you?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I don't just write code, I ship products that people actually use, from a marketplace platform to a virtual lab serving 400+ students. I learn new stacks quickly when a project demands it, whether that's Rust, LLM orchestration, or mobile development. I also take feedback seriously and iterate fast on it. That combination of speed and adaptability is hard to find this early in a career."
   },
   {
     "id": "what-can-you-bring-to-the-team",
     "question": "What can you bring to the team?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I bring full-stack execution ability, from backend architecture to frontend polish to deployment and monitoring. I've also worked directly with LLM APIs and RAG pipelines, so I can contribute on the AI side too. Beyond the technical work, I've led partnerships across 5 colleges through a project I founded, so I understand coordination and stakeholder management. I bring energy, ownership, and a bias toward shipping."
   },
   {
     "id": "what-are-your-greatest-strengths",
     "question": "What are your greatest strengths?",
     "category": "PERSONAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "My biggest strength is range, I can move between backend systems, frontend work, and AI integrations without losing speed. I'm also good at taking ambiguous problems and turning them into working products, which is how I built and scaled Prayukti vLAB to 400+ concurrent users. I stay calm under deadline pressure and pick up new tools quickly when a project needs them."
   },
   {
     "id": "what-is-your-biggest-weakness",
     "question": "What is your biggest weakness?",
     "category": "PERSONAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I sometimes take on more than I should because I enjoy building things, which has meant juggling a startup, a technical society, two degrees, and client work at once. I've gotten better at saying no and prioritizing what actually moves the needle, but it's something I actively watch. I'd rather be aware of this tendency and manage it than pretend it doesn't exist."
   },
   {
     "id": "why-do-you-want-to-work-with-us",
     "question": "Why do you want to work with us?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I'm looking for a place where I can keep working on real products with real users rather than isolated exercises. From what I've seen, this is a team that ships and takes ownership seriously, which matches how I like to work. I want to be somewhere my range across full-stack and AI actually gets used, not boxed into one narrow lane."
   },
   {
     "id": "why-do-you-want-this-role",
     "question": "Why do you want this role?",
     "category": "CAREER",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "This role lines up with what I've already been doing, building full-stack products and integrating AI into real workflows. I want to go deeper into that instead of spreading across too many things at once. It's also a chance to work at a scale and with a team that pushes me to grow faster than working alone would."
   },
   {
     "id": "why-this-company",
     "question": "Why this company?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I've looked at what the team is building and it lines up closely with the kind of AI and product work I've been doing on my own projects. I like that the work here seems to touch real users and real outcomes, not just internal tools. I want to bring my execution speed and product instincts into a setting where the impact is bigger than what I can do solo."
   },
   {
     "id": "why-are-you-looking-for-a-job",
     "question": "Why are you looking for a job?",
     "category": "CAREER",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I've been building on my own and through short stints at startups, and I've learned a lot, but I want the consistency and scale of a full-time role now. I want to work on harder problems with a stronger team around me instead of always figuring things out alone. I'm ready to commit fully to one place and go deep."
   },
   {
     "id": "where-do-you-see-yourself-in-5-years",
     "question": "Where do you see yourself in 5 years?",
     "category": "CAREER",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I see myself as someone who's gone deep on both AI systems and product engineering, ideally leading a team or a major product area by then. I want to have shipped things that scaled well beyond what I've built so far. Whether that's inside a company or something of my own again, I want to still be building things people actually use."
   },
   {
     "id": "what-are-your-short-term-goals",
     "question": "What are your short-term goals?",
     "category": "CAREER",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Right now my short-term goal is to join a team where I can apply what I've learned building full-stack and AI products at a larger scale. I want to sharpen my skills in production-grade systems, particularly around AI orchestration and reliability. I also want to finish both my degrees while continuing to build in parallel."
   },
   {
     "id": "what-are-your-long-term-goals",
     "question": "What are your long-term goals?",
     "category": "CAREER",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Long term, I want to be someone who can take an ambiguous problem and turn it into a product that scales, whether that's within a company or something I start myself. I want to keep working at the intersection of AI and full-stack engineering, since that's where I think the most interesting problems are. Eventually I'd like to lead teams doing that kind of work."
   },
   {
     "id": "tell-me-about-yourself",
     "question": "Tell me about yourself.",
     "category": "PERSONAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I'm an AI and full-stack developer currently pursuing two degrees, in Data Science from IIT Madras and Computer Science from MMMUT. I've worked across startups and client projects, building everything from LLM-powered workflows to production web platforms that scaled to hundreds of concurrent users. I also co-founded a startup and lead a technical society that maintains a virtual lab platform I built. Outside of building, I've published research on fairness in language models and competed in a few hackathons and CTFs along the way."
   },
   {
     "id": "walk-me-through-your-resume",
     "question": "Walk me through your resume.",
     "category": "EXPERIENCE",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I started by founding a technical project at my university, a virtual lab platform that now serves 400+ students, which is what got me deep into backend and infrastructure work. From there I co-founded EarnBuddy.io, a team-building platform, where I led all technical decisions as CTO. I then took a growth-focused internship at Ganges Live where I built a full marketplace platform from scratch, and most recently worked as a full stack engineer at Exaflair on client projects using Next.js, NestJS, and React Native. Alongside all of this I've kept building my own projects and publishing research on LLM fairness."
   },
   {
     "id": "what-motivates-you",
     "question": "What motivates you?",
     "category": "PERSONAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I'm motivated by seeing something I built actually get used, whether that's students running experiments on a lab platform or customers using a marketplace I set up. I like the feedback loop of building, shipping, and improving based on real usage. Solving a hard technical problem is satisfying, but watching it work for real people is what keeps me going."
   },
   {
     "id": "what-drives-you",
     "question": "What drives you?",
     "category": "PERSONAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I'm driven by wanting to build things that matter rather than things that just look good on paper. Seeing a project go from an idea to something with real users, like the vLAB platform cutting dependency on physical lab infrastructure, is what pushes me to keep going. I also enjoy the challenge of picking up a new stack or domain when a problem calls for it."
   },
   {
     "id": "how-do-you-handle-failure",
     "question": "How do you handle failure?",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "When something doesn't work, I try to figure out exactly why before deciding what to change, rather than reacting emotionally. Pausing EarnBuddy.io was a hard call, but instead of treating it as a dead end, I took what I learned about scaling and product decisions into my later work at Ganges Live and Exaflair. I try to treat setbacks as information, not verdicts."
   },
   {
     "id": "how-do-you-handle-pressure",
     "question": "How do you handle pressure?",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I break the problem down and focus on what has to get done first, especially when I'm juggling multiple things like running a startup, a technical society, and coursework at the same time. I try to stay honest with myself about what's realistic and communicate early if something is at risk. Staying organized keeps the pressure from turning into panic."
   },
   {
     "id": "how-do-you-deal-with-conflict",
     "question": "How do you deal with conflict?",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I try to separate the disagreement from the person and focus on what outcome we're both actually trying to reach. Leading a technical society and coordinating across colleges taught me that most conflicts come from unclear expectations rather than bad intentions. I'd rather have a direct conversation early than let something fester."
   },
   {
     "id": "tell-me-about-a-time-you-failed",
     "question": "Tell me about a time you failed.",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "EarnBuddy.io, the startup I co-founded, scaled to 500+ users and partnerships across 5 colleges, but we eventually had to pause it. Looking back, we moved fast on growth without fully validating the long-term model, which caught up with us. I took that lesson directly into my next roles, being more deliberate about validating things before scaling them further."
   },
   {
     "id": "tell-me-about-a-challenge-you-overcame",
     "question": "Tell me about a challenge you overcame.",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Building Prayukti vLAB meant designing a multi-tenant architecture that could handle 400+ concurrent students running experiments reliably, which was a real technical challenge for a student-led project. I had to learn Rust and Axum properly to get the performance and reliability right, while also securing a college grant to fund the infrastructure. It's now maintained under the technical society I lead, and it cut dependency on physical lab infrastructure by more than 60 percent."
   },
   {
     "id": "tell-me-about-a-time-you-took-initiative",
     "question": "Tell me about a time you took initiative.",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I noticed my university didn't have a good way for students to run engineering experiments remotely, so I founded and built Prayukti vLAB to solve that instead of waiting for someone else to. I secured a college grant, built the platform myself, and it now serves 400+ concurrent students across 50+ experiments. Nobody assigned that to me, I just saw the gap and built the solution."
   },
   {
     "id": "how-do-you-prioritize-your-work",
     "question": "How do you prioritize your work?",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I usually start by asking what actually moves the product or the user forward versus what feels productive but isn't urgent. Running multiple things at once, a startup, a project, and client work, forced me to get disciplined about this quickly. I check in regularly on priorities rather than locking into a plan and sticking to it blindly."
   },
   {
     "id": "how-do-you-work-in-a-team",
     "question": "How do you work in a team?",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I like being clear about ownership so people know what they're responsible for, which I learned leading CSIS MMMUT and coordinating partnerships across 5 colleges. I try to stay easy to reach and quick to unblock people rather than waiting for scheduled check-ins. At Exaflair I worked across client projects with different teams, so I've learned to adapt to different working styles quickly."
   },
   {
     "id": "what-is-your-leadership-style",
     "question": "What is your leadership style?",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I lead by staying close to the work rather than just delegating and checking in later. As President of CSIS MMMUT and CTO of EarnBuddy.io, I made sure I understood the technical details well enough to support my team, not just direct them. I try to give people ownership while staying available when they need help."
   },
   {
     "id": "how-do-you-handle-feedback",
     "question": "How do you handle feedback?",
     "category": "BEHAVIORAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I actively look for it, which is part of why I made a point of onboarding early customers at Ganges Live and getting direct feedback from them instead of guessing what they wanted. I try not to get defensive and instead ask follow-up questions to understand the real issue. Feedback is one of the fastest ways to improve a product, so I'd rather hear it early than find out later."
   },
   {
     "id": "what-are-you-currently-learning",
     "question": "What are you currently learning?",
     "category": "TECHNICAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I've been going deeper into agentic AI workflows and AI agent orchestration, building on the RAG pipelines and LLM integrations I've already worked with. I'm also continuing to strengthen my backend skills, especially around Rust, since that's what I used to build the vLAB platform. Alongside that I'm finishing coursework for both my degrees."
   },
   {
     "id": "why-did-you-choose-your-degree",
     "question": "Why did you choose your degree?",
     "category": "EDUCATION",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I chose Data Science because I wanted a strong quantitative foundation to back up the AI and LLM work I was already doing hands-on. IIT Madras's program let me study it remotely while still working and building projects at the same time, which mattered to me. It's given me the theoretical grounding to go with the practical experience I've built through internships and my own projects."
   },
   {
     "id": "why-are-you-pursuing-two-degrees",
     "question": "Why are you pursuing two degrees?",
     "category": "EDUCATION",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I wanted both the practical engineering foundation from a Computer Science degree and the quantitative depth of a Data Science program, since my work sits right at that intersection of full-stack engineering and AI. The distance format of the IIT Madras program made it possible to pursue both without pausing the real project and work experience I was gaining. It's been demanding, but the combination has directly shaped the kind of work I do."
   },
   {
     "id": "why-computer-science",
     "question": "Why Computer Science?",
     "category": "EDUCATION",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Computer Science gave me the core engineering foundation I needed to actually build the systems I was interested in, from web platforms to backend infrastructure. It's also the degree that let me get involved in projects and competitions early, like the CTF and hackathons I've taken part in. It fit naturally with the hands-on building I was already doing."
   },
   {
     "id": "why-data-science",
     "question": "Why Data Science?",
     "category": "EDUCATION",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I picked Data Science because I was already working with LLMs and wanted a proper grounding in the statistics and modeling behind them rather than just using them as tools. It's directly informed my research work on bias detection in language models. It complements the engineering side of what I do rather than duplicating it."
   },
   {
     "id": "why-so-many-projects",
     "question": "Why so many projects?",
     "category": "EXPERIENCE",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Each project came from a real gap I noticed, whether that was a lab infrastructure problem at my university or a workflow automation need I saw with Caller.work. I don't build things just to have them on a resume, I build them because I want to see if I can actually solve the problem. That's also the fastest way I've found to learn a new stack or domain."
   },
   {
     "id": "why-do-you-build-so-many-things",
     "question": "Why do you build so many things?",
     "category": "EXPERIENCE",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Building is how I learn best, I pick up a new stack or concept much faster when I'm applying it to something real. Prayukti vLAB taught me Rust and multi-tenant architecture, Caller.work taught me event-driven systems, and each one added something to what I could bring to my next role. It also keeps me close to actual users and their problems rather than just theory."
   },
   {
     "id": "what-is-your-proudest-project",
     "question": "What is your proudest project?",
     "category": "TECHNICAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Prayukti vLAB is the project I'm most proud of. I founded it, built the entire multi-tenant architecture myself, and secured a 10 lakh college grant to fund it, and it now serves 400+ concurrent students across 50+ experiments. It's cut dependency on physical lab infrastructure by over 60 percent and is still actively maintained under the technical society I lead. Seeing something I built from scratch become real infrastructure for my university is what makes it stand out for me."
   },
   {
     "id": "what-are-you-looking-for-in-your-next-role",
     "question": "What are you looking for in your next role?",
     "category": "CAREER",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I'm looking for a role where I can work on production systems at a bigger scale than I've managed on my own, ideally with a strong technical team around me. I want the work to involve both full-stack engineering and AI, since that's where I've built the most depth. I also want a place that gives me ownership rather than narrowly scoped tasks."
   },
   {
     "id": "what-are-your-salary-expectations",
     "question": "What are your salary expectations?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I'm early in my career, so I'm flexible and more focused on finding the right role and team fit than optimizing purely on numbers. I'd like to understand the full compensation structure and growth path first, and I'm confident we can land on something fair for both sides. I'm open to discussing a specific range once I understand the scope of the role better."
   },
   {
     "id": "why-should-we-trust-you-with-this-responsibility",
     "question": "Why should we trust you with this responsibility?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I've already had real ownership before, running technical decisions as CTO of a 500-user startup and leading a platform used by 400+ students at my university. I take responsibility seriously and I don't wait to be told what to do when something needs attention. My track record of shipping and maintaining real systems is the best evidence I can offer."
   },
   {
     "id": "are-you-overqualified",
     "question": "Are you overqualified?",
     "category": "FIT",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I don't think so, I'm still early in my career and there's a lot I want to learn from working inside a bigger team and more mature systems. What I have is range and initiative, not a finished skill set. I'd rather see this as a role I can grow into and contribute to immediately, not one I'm above."
   },
   {
     "id": "are-you-going-to-stay-long-term",
     "question": "Are you going to stay long-term?",
     "category": "CAREER",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "Yes, I'm looking for a place I can commit to and grow with, not another short stint. My past roles were focused engagements, an internship, a project-based role, that were the right fit at the time, but I'm looking for something longer term now where I can go deep rather than move around."
   },
   {
     "id": "why-did-you-leave-your-last-role",
     "question": "Why did you leave your last role?",
     "category": "EXPERIENCE",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "My time at Exaflair was structured as a defined engagement across client projects, so it wrapped up as planned rather than me choosing to leave early. I'm now looking for a longer-term role where I can commit fully to one team and one set of problems instead of moving between projects."
   },
   {
     "id": "why-dont-you-specialize-in-one-thing",
     "question": "Why don't you specialize in one thing?",
     "category": "TECHNICAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "I do have a core, full-stack engineering with a strong focus on AI integration, but being able to move across the stack and into AI orchestration makes me more useful, not less focused. Most of the products I've built needed exactly that range, from backend architecture to LLM workflows to frontend delivery. I see it as depth across a connected area rather than a lack of specialization."
   },
   {
     "id": "arent-you-spreading-yourself-too-thin",
     "question": "Aren't you spreading yourself too thin?",
     "category": "PERSONAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "It can look that way from the outside, but each thing I've taken on connects back to the same core skill set of building and shipping products. I've learned to prioritize carefully so quality doesn't slip, which is part of why I decided to pause EarnBuddy.io when I needed to focus elsewhere. I'd rather be honest that I manage multiple things deliberately than pretend I only ever focus on one."
   },
   {
     "id": "what-exactly-are-you-engineer-founder-or-student",
     "question": "What exactly are you — engineer, founder, or student?",
     "category": "PERSONAL",
-    "answer": "Demo answer — this will be replaced later."
+    "answer": "At the core, I'm an engineer, that's the skill I keep coming back to no matter what role I'm in. Being a founder and a student gave me context, like understanding product decisions and business tradeoffs, but building is what I actually do best. I see the founder and student experience as things that make me a better engineer, not separate identities."
   }
 ]

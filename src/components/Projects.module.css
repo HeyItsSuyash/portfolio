@@ -160,12 +160,14 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* ── CAROUSEL ARROWS ── */
+/* ── CAROUSEL ARROWS (HORIZONTALLY CENTERED) ── */
 .carouselNav {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 24px;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 32px;
 }
 
 .carouselArrowBtn {
@@ -205,7 +207,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 40px 32px;
 }
 
 /* Atmospheric Purple Studio Background Behind Laptop */
@@ -237,15 +239,58 @@
   pointer-events: none;
 }
 
-.laptopMockupWrapper {
+.laptopContainer {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 700px;
+  max-width: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── TITLE AND SUBTITLE POSITIONED ABOVE LAPTOP ── */
+.sectionHeaderAbove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  max-width: 620px;
+  margin-bottom: 4px;
+}
+
+.showcaseTitle {
+  font-family: 'Cinzel', var(--clay-heading-font), serif;
+  font-size: clamp(24px, 2.6vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #F5F5DC;
+  margin: 0;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.showcaseSubtitle {
+  font-family: var(--font-google-sans), var(--font-raleway), sans-serif;
+  font-size: clamp(12.5px, 1.2vw, 14.5px);
+  line-height: 1.5;
+  color: rgba(245, 245, 220, 0.78);
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.laptopMockupWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scale(0.92);
+  transform: scale(0.88);
+  margin-top: -6px;
 }
 
 .macbook {
@@ -276,38 +321,77 @@
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
 }
 
-/* Top Notch with Camera */
-.webcamNotch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 11px;
-  background: #000000;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  z-index: 10;
+/* ── TOP BROWSER RIBBON ── */
+.browserRibbon {
+  height: 24px;
+  background: #11141a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 12px;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.windowControls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.windowDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dotClose { background: #ff5f56; }
+.dotMin { background: #ffbd2e; }
+.dotMax { background: #27c93f; }
+
+.urlPill {
+  flex: 1;
+  max-width: 240px;
+  margin: 0 auto;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-width: 0;
 }
 
-.webcamLens {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #2563eb 30%, #030712 100%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+.lockIcon {
+  color: rgba(245, 245, 220, 0.5);
+  flex-shrink: 0;
 }
 
-/* Display Screen Inside Laptop (Fully visible, not cropped) */
+.urlText {
+  font-family: monospace;
+  font-size: 8.5px;
+  color: rgba(245, 245, 220, 0.7);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Display Screen Inside Laptop */
 .displayArea {
   position: relative;
   width: 100%;
-  height: 100%;
+  flex: 1;
   background: #000000;
   overflow: hidden;
   display: flex;
@@ -329,6 +413,135 @@
 .projectImage {
   object-fit: contain;
   object-position: center;
+}
+
+/* ── WINDOWS 11 TASKBAR RIBBON ── */
+.taskbarRibbon {
+  height: 20px;
+  background: rgba(15, 18, 24, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  z-index: 5;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.taskbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.taskbarWeatherIcon {
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.taskbarTemp {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 7.5px;
+  color: rgba(245, 245, 220, 0.6);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.taskbarCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Windows 11 4-Square Logo */
+.winLogoIcon {
+  width: 13px;
+  height: 13px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5px;
+  align-content: center;
+  justify-content: center;
+  padding: 1.5px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.winLogoIcon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.winSquare {
+  background: #00a4ef;
+  border-radius: 0.5px;
+  width: 4px;
+  height: 4px;
+}
+
+.winSquare:nth-child(1) { background: #f25022; }
+.winSquare:nth-child(2) { background: #7fba00; }
+.winSquare:nth-child(3) { background: #00a4ef; }
+.winSquare:nth-child(4) { background: #ffb900; }
+
+.taskbarAppIcon {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: rgba(245, 245, 220, 0.7);
+  position: relative;
+  transition: background 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.taskbarAppIcon:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #F5F5DC;
+}
+
+.activeAppIcon {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a855f7;
+}
+
+.appActiveDot {
+  position: absolute;
+  bottom: 0.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 1.5px;
+  background: #a855f7;
+  border-radius: 1px;
+}
+
+.taskbarRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  width: 58px;
+  color: rgba(245, 245, 220, 0.6);
+  flex-shrink: 0;
+}
+
+.taskbarClock {
+  font-family: monospace;
+  font-size: 7.5px;
+  color: rgba(245, 245, 220, 0.7);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 /* Laptop Keyboard Base Chassis */
@@ -382,15 +595,143 @@
   /* Right column (Laptop image) at top */
   .rightColumn {
     width: 100%;
-    height: 48vh;
-    min-height: 280px;
-    max-height: 380px;
-    padding: 30px 16px 20px 16px;
+    height: auto;
+    min-height: 320px;
+    max-height: unset;
+    padding: 30px 16px 10px 16px;
+  }
+
+  .laptopContainer {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .sectionHeaderAbove {
+    padding: 0 10px;
+    gap: 4px;
+  }
+
+  .showcaseTitle {
+    font-size: 19px;
+  }
+
+  .showcaseSubtitle {
+    font-size: 11px;
+    line-height: 1.45;
   }
 
   .laptopMockupWrapper {
-    max-width: 360px;
-    transform: scale(0.95);
+    width: 92%;
+    max-width: 380px;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .macbookLid {
+    padding: 5px 5px 0 5px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .screenBezel {
+    border-radius: 6px 6px 0 0;
+  }
+
+  .browserRibbon {
+    height: 18px;
+    padding: 0 6px;
+    gap: 6px;
+  }
+
+  .windowControls {
+    gap: 3px;
+  }
+
+  .windowDot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .urlPill {
+    height: 12px;
+    padding: 0 5px;
+    max-width: 160px;
+  }
+
+  .urlText {
+    font-size: 7px;
+  }
+
+  .taskbarRibbon {
+    height: 16px;
+    padding: 0 6px;
+  }
+
+  .taskbarLeft {
+    width: 32px;
+    gap: 2px;
+  }
+
+  .taskbarWeatherIcon {
+    width: 8px;
+    height: 8px;
+  }
+
+  .taskbarTemp {
+    font-size: 6.5px;
+  }
+
+  .taskbarCenter {
+    gap: 3px;
+  }
+
+  .winLogoIcon {
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    gap: 1px;
+  }
+
+  .winSquare {
+    width: 3px;
+    height: 3px;
+  }
+
+  .taskbarAppIcon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .taskbarAppIcon svg {
+    width: 7.5px;
+    height: 7.5px;
+  }
+
+  .appActiveDot {
+    width: 3px;
+    height: 1px;
+  }
+
+  .taskbarRight {
+    width: 44px;
+    gap: 3px;
+  }
+
+  .taskbarRight svg {
+    width: 6.5px;
+    height: 6.5px;
+  }
+
+  .taskbarClock {
+    font-size: 6.5px;
+  }
+
+  .macbookBase {
+    height: 9px;
+  }
+
+  .notchIndent {
+    width: 50px;
+    height: 3.5px;
   }
 
   .verticalDivider {
@@ -403,8 +744,8 @@
     width: 100%;
     min-width: unset;
     max-width: 100%;
-    padding: 24px 20px 48px 20px;
-    gap: 16px;
+    padding: 20px 20px 48px 20px;
+    gap: 14px;
   }
 
   .counterDivider {
@@ -412,24 +753,24 @@
   }
 
   .projectTitle {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.15;
   }
 
   .projectSubtitle {
     font-size: 10px;
-    margin-top: 6px;
+    margin-top: 4px;
   }
 
   .projectDescription {
-    font-size: 13.5px;
-    line-height: 1.55;
-    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 10px;
     max-width: 100%;
   }
 
   .techStackContainer {
-    margin-top: 14px;
+    margin-top: 12px;
   }
 
   .techStackList {
@@ -437,11 +778,11 @@
   }
 
   .techItem {
-    font-size: 11.5px;
+    font-size: 11px;
   }
 
   .actionButtons {
-    margin-top: 18px;
+    margin-top: 16px;
     gap: 10px;
   }
 
@@ -451,8 +792,9 @@
   }
 
   .carouselNav {
-    margin-top: 16px;
-    gap: 12px;
+    margin-top: 14px;
+    gap: 16px;
+    justify-content: center;
   }
 
   .carouselArrowBtn {

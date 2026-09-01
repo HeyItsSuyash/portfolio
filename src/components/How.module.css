@@ -2,120 +2,167 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  height: 100vh;
   background-color: #030406;
-  overflow: hidden;
+  color: #F5F5DC;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Full Space Background Video */
-.bgVideo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* Transparent Black Overlay */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.72);
-  z-index: 2;
-  pointer-events: none;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 60px 24px;
 }
 
 .container {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 36px;
   width: 100%;
-  height: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* ── LARGE CENTERED HANDLE ── */
+.handleText {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(48px, 9.5vw, 130px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #F5F5DC;
+  margin: 0;
+  line-height: 1.05;
+  user-select: none;
+  transition: opacity 0.3s ease;
+  word-break: break-word;
+  text-align: center;
+  width: 100%;
+}
+
+.handleText:hover {
+  opacity: 0.9;
+}
+
+/* ── SOCIAL ICONS ROW (THEME FONT COLOR, NO BACKGROUND) ── */
+.socialIconsRow {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  gap: 26px;
+  flex-wrap: nowrap;
+  max-width: 100%;
 }
 
-.bgName {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--clay-heading-font), serif;
-  font-weight: 400;
-  font-size: 20vw;
-  line-height: 0.9;
-  color: rgba(245, 245, 220, 0.15);
-  pointer-events: none;
-  z-index: 1;
-  white-space: nowrap;
-  letter-spacing: -0.02em;
-  text-align: center;
-}
-
-.definition {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  background: transparent;
-  padding: 0;
-  border: none;
-  max-width: 340px;
-  z-index: 10;
+.socialLink {
   color: #F5F5DC;
-  font-family: var(--clay-heading-font), serif;
-  text-align: right;
-}
-
-.defWord {
-  font-weight: 800;
-  font-size: 24px;
-  margin-bottom: 2px;
-  color: #F5F5DC;
-}
-
-.phonetic {
-  font-weight: 400;
-  font-size: 15px;
-  opacity: 0.75;
-  margin-left: 10px;
-  font-family: serif;
-}
-
-.defType {
-  font-style: italic;
-  font-size: 13px;
   opacity: 0.65;
-  margin-bottom: 12px;
-  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 6px;
+  border-radius: 0;
+  text-decoration: none;
+  font-size: 22px;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
 }
 
-.defMeaning {
-  font-size: 15px;
-  line-height: 1.5;
-  opacity: 0.85;
-  font-weight: 400;
+.socialLink:hover {
+  opacity: 1;
+  color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
+/* ── BOTTOM LEFT EMAIL BADGE ── */
+.bottomLeftMail {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-google-sans), monospace;
+  font-size: 13px;
+  color: rgba(245, 245, 220, 0.6);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  z-index: 5;
+}
+
+.bottomLeftMail:hover {
+  color: #F5F5DC;
+  opacity: 1;
+}
+
+.mailDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(245, 245, 220, 0.4);
+}
+
+/* ── MOBILE RESPONSIVENESS & CENTERING ── */
 @media (max-width: 768px) {
-  .definition {
-    bottom: 30px;
-    right: 20px;
-    left: 20px;
-    max-width: none;
+  .howSection {
+    min-height: 100vh;
+    padding: 40px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    gap: 28px;
+    padding: 0 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .handleText {
+    font-size: clamp(38px, 9.2vw, 56px);
+    line-height: 1.05;
     text-align: center;
   }
-  .defWord { font-size: 22px; }
-  .phonetic { font-size: 14px; }
-  .defMeaning { font-size: 14px; }
+
+  .socialIconsRow {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: visible;
+  }
+
+  .socialLink {
+    font-size: 17px;
+    padding: 4px;
+  }
+
+  .bottomLeftMail {
+    bottom: 20px;
+    left: 20px;
+    font-size: 11.5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .handleText {
+    font-size: clamp(32px, 8.8vw, 42px);
+  }
+
+  .socialIconsRow {
+    gap: 8px;
+  }
+
+  .socialLink {
+    font-size: 15.5px;
+    padding: 3px;
+  }
 }

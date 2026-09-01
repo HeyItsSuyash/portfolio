@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Sekuya&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
   --clay-heading-font: 'Bodoni Moda', serif;
@@ -12,6 +13,7 @@
   --clay-heading: #F5F5DC;
   --clay-font: 'Fraunces', serif;
   --clay-transition: all 0.3s ease;
+  --font-google-sans: 'Google Sans', 'Product Sans', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 
@@ -199,4 +201,3 @@ h1, h2, h3, h4, h5, h6 {
 html, body, *, a, button, input, select, textarea {
   cursor: none !important;
 }
-

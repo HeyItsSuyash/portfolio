@@ -86,12 +86,13 @@
 
 .subtitle {
   font-family: var(--font-raleway), sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: rgba(245, 245, 220, 0.75);
-  font-weight: 300;
-  max-width: 600px;
-  margin: 0;
+  font-size: clamp(19px, 2.4vw, 28px);
+  line-height: 1.4;
+  color: rgba(245, 245, 220, 0.88);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  max-width: 700px;
+  margin: 4px 0 0 0;
 }
 
 /* ── VERTICAL TIMELINE STRUCTURE ── */
@@ -150,7 +151,7 @@
   z-index: 2;
 }
 
-/* ── NODE ROW (50-50 SPLIT: CARD WRAPPER ATTACHED TO PIN) ── */
+/* ── NODE ROW ── */
 .nodeRow {
   position: relative;
   width: 100%;
@@ -186,27 +187,28 @@
   align-items: center;
   justify-content: center;
   color: #F5F5DC;
-  transition: border-color 0.25s ease, color 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .nodeRow:hover .pinNode {
   border-color: #F5F5DC;
-  color: #FFFFFF;
+  box-shadow: 0 0 16px rgba(245, 245, 220, 0.3);
 }
 
-.pinIcon {
+.logoWrapper {
+  position: relative;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
 }
 
-.pinIcon svg {
-  width: 20px;
-  height: 20px;
-  display: block;
+.nodeLogo {
+  object-fit: contain;
 }
 
 /* Card Column: Occupies exactly 50% width on left or right */
@@ -263,6 +265,7 @@
 .cardHeader {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .yearBadge {
@@ -274,6 +277,18 @@
   color: #050b14;
   background-color: #F5F5DC;
   padding: 4px 10px;
+}
+
+.collegeBadge {
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #F5F5DC;
+  background: rgba(245, 245, 220, 0.1);
+  border: 1px solid rgba(245, 245, 220, 0.25);
+  padding: 3px 8px;
 }
 
 .cardTitle {
@@ -316,14 +331,14 @@
   font-weight: 300;
 }
 
-/* ── SMOOTH OVERLAY GRADIENT TRANSITION ── */
+/* ── SMOOTH OVERLAY GRADIENT TO WHY SECTION (#03060a) ── */
 .bottomOverlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 160px;
-  background: linear-gradient(to bottom, transparent 0%, rgba(3, 4, 6, 0.7) 50%, #030406 100%);
+  height: 180px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(3, 6, 10, 0.6) 45%, #03060a 100%);
   pointer-events: none;
   z-index: 5;
 }
@@ -339,6 +354,10 @@
     gap: 40px;
   }
 
+  .subtitle {
+    font-size: 16px;
+  }
+
   .nodesContainer {
     gap: 36px;
   }
@@ -349,9 +368,9 @@
     border-width: 1.5px;
   }
 
-  .pinIcon svg {
-    width: 14px;
-    height: 14px;
+  .logoWrapper {
+    width: 18px;
+    height: 18px;
   }
 
   .branchLine {
@@ -364,9 +383,18 @@
     gap: 6px;
   }
 
+  .cardHeader {
+    gap: 6px;
+  }
+
   .yearBadge {
     font-size: 9px;
     padding: 2px 6px;
+  }
+
+  .collegeBadge {
+    font-size: 8.5px;
+    padding: 2px 5px;
   }
 
   .cardTitle {

@@ -37,17 +37,8 @@ export default function Why({ id = 'why' }: { id?: string }) {
       <div className={styles.container}>
         {/* Section Header */}
         <header className={styles.header}>
-          <div className={styles.sectionLabel}>04 / WHY ME?</div>
-          <h2 className={styles.title}>WHY ME?</h2>
-          <h3 className={styles.subHeading}>So, have I answered them?</h3>
-          <blockquote className={styles.narrativeQuote}>
-            <p>I&apos;ve answered that question before.</p>
-            <p>I&apos;ve answered that one too.</p>
-            <p>After a while, the answers start sounding the same.</p>
-            <p className={styles.quoteEmphasis}>
-              So instead of answering them again, I built this section to answer them for me.
-            </p>
-          </blockquote>
+          <h2 className={styles.title}>Why Should We Choose You?</h2>
+          <h3 className={styles.subHeading}>And alot of other similar questions have been asked to me quite a few times, so I decided to curate an FAQ section to answer them, <br /> here are some of the questions most commonly asked to me (and their answers).</h3>
         </header>
 
         {/* Live Search Bar */}
@@ -74,9 +65,6 @@ export default function Why({ id = 'why' }: { id?: string }) {
                 ✕
               </button>
             )}
-          </div>
-          <div className={styles.searchMeta}>
-            Showing {filteredQuestions.length} of {questions.length} questions
           </div>
         </div>
 
@@ -120,7 +108,6 @@ export default function Why({ id = 'why' }: { id?: string }) {
                         className={styles.answerWrapper}
                       >
                         <div className={styles.answerContent}>
-                          <div className={styles.answerPrefix}>ANSWER //</div>
                           <p className={styles.answerText}>{item.answer}</p>
                         </div>
                       </motion.div>
@@ -133,9 +120,9 @@ export default function Why({ id = 'why' }: { id?: string }) {
             /* Empty Search State */
             <div className={styles.emptyState}>
               <div className={styles.emptyTitle}>Couldn&apos;t find your question?</div>
-              <div className={styles.emptySubtitle}>You might have to ask me yourself.</div>
+              <div className={styles.emptySubtitle}>I would love to respond to your question personally!</div>
               <a href="#how" className={styles.emptyCta}>
-                ASK DIRECTLY →
+                Schedule a Meet
               </a>
             </div>
           )}
