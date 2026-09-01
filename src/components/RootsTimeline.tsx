@@ -1,7 +1,9 @@
-import styles from './RootsTimeline.module.css';
-import Telescope3D from '@/components/Telescope3D';
+'use client';
 
-const timelineData = [
+import React from 'react';
+import styles from './RootsTimeline.module.css';
+
+export const TIMELINE_DATA = [
   {
     id: 'class6',
     year: 'Class 6 (2016–17)',
@@ -139,28 +141,24 @@ const timelineData = [
   }
 ];
 
-export default function RootsTimeline({ id = 'what' }: { id?: string }) {
+export default function RootsTimeline() {
   return (
-    <section id={id} className="snap-section">
-      <div className="section-header">
-        <span className="section-label">Roots — Origins</span>
+    <section id="roots" className={styles.rootsSection}>
+      <div className={styles.sectionHeader}>
+        <span className={styles.sectionLabel}>Roots — Origins</span>
       </div>
-      <div className="section-title">My Roots in STEM</div>
-
-      {/* 3D Telescope Model Canvas */}
-      <div style={{ width: '100%', maxWidth: '380px', height: '320px', margin: '0 auto 20px' }}>
-        <Telescope3D />
-      </div>
+      <div className={styles.sectionTitle}>My Roots in STEM</div>
 
       <div className={styles.timelineContainer}>
         <div className={styles.timelineLine}></div>
-        {timelineData.map((node, index) => {
+        {TIMELINE_DATA.map((node, index) => {
           const isLeft = index % 2 === 0;
           return (
-            <div key={node.id} className={`${styles.node} ${isLeft ? styles.leftNode : styles.rightNode}`}>
-              <div className={styles.iconBox}>
-                {node.icon}
-              </div>
+            <div
+              key={node.id}
+              className={`${styles.node} ${isLeft ? styles.leftNode : styles.rightNode}`}
+            >
+              <div className={styles.iconBox}>{node.icon}</div>
               <div className={styles.content}>
                 <div className={styles.year}>{node.year}</div>
                 <div className={styles.title}>{node.title}</div>

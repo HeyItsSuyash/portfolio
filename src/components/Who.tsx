@@ -40,6 +40,9 @@ export default function Who({ id = 'who' }: { id?: string }) {
           A person of wide knowledge or learning whose expertise spans a significant number of different subject areas.
         </div>
       </div>
+
+      {/* Dark Blue Overlay Transitioning Gradient into Next Section */}
+      <div className={styles.bottomOverlay} />
     </section>
   );
 }

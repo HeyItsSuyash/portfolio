@@ -1,142 +1,162 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { PROJECTS_DATA } from '@/data/projectsData';
 import styles from './Projects.module.css';
-import { playHoverPop, playClickThud } from '@/utils/audioUtils';
 
-gsap.registerPlugin(ScrollTrigger);
+export default function Projects({ id = 'where' }: { id?: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<1 | -1>(1);
 
-const projects = [
-  {
-    num: '01',
-    name: 'Prayukti vLAB',
-    desc: 'Multi-tenant virtual laboratory platform with RBAC, real-time experiment execution over WebSockets, and automated grading. 50+ experiments, 99%+ uptime. Reduced deployment cycle time by 70%.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Docker', 'GCP', 'WebSockets'],
-    link: 'https://mmmut.prayukti.org',
-    linkLabel: 'mmmut.prayukti.org',
-  },
-  {
-    num: '02',
-    name: 'EarnBuddy',
-    desc: 'Microservices SaaS platform with domain-driven REST APIs, JWT auth with RBAC, real-time bidirectional chat, and CMS workflow automation. Cut p95 latency by 40% via MongoDB pipeline + Redis optimization.',
-    tags: ['Node.js', 'Express', 'Socket.IO', 'Redis', 'JWT', 'Microservices'],
-    link: 'https://earnbuddy.io',
-    linkLabel: 'earnbuddy.io',
-  },
-  {
-    num: '03',
-    name: 'Agentic AI Pipeline',
-    desc: 'Fully autonomous multi-agent pipeline using LangGraph DAG orchestration and LangChain tool-calling to scrape, deduplicate, quality-filter, and schema-validate instruction-tuning datasets — zero manual intervention in the hot path.',
-    tags: ['LangChain', 'LangGraph', 'OpenAI API', 'FastAPI', 'PostgreSQL', 'Docker'],
-    link: null,
-    linkLabel: null,
-  },
-  {
-    num: '04',
-    name: 'LLM Benchmark Suite',
-    desc: 'Evaluation harness benchmarking LLaMA, Mistral, and Phi across reasoning, code synthesis, and instruction-following. SQL-backed metrics store with window functions and CTEs tracking accuracy, throughput, and token efficiency per model version.',
-    tags: ['Python', 'HuggingFace', 'vLLM', 'MLflow', 'PostgreSQL'],
-    link: null,
-    linkLabel: null,
-  },
-  {
-    num: '05',
-    name: 'Voice AI Agent',
-    desc: 'Production voice AI pipeline: Whisper ASR → LLM reasoning with multi-turn memory and tool-calling → neural TTS. Captures structured interaction datasets enabling continuous RLHF-style improvement.',
-    tags: ['Whisper ASR', 'LangChain', 'GCP', 'Twilio', 'Python'],
-    link: null,
-    linkLabel: null,
-  },
-  {
-    num: '06',
-    name: 'Caller.work',
-    desc: 'Fault-tolerant event-driven automated calling backend with webhook orchestration, structured logging, and distributed tracing on GCP. Sustained 50+ automated calls/month at sub-second response latency.',
-    tags: ['Node.js', 'GCP', 'Twilio', 'Event-driven', 'Webhooks'],
-    link: 'https://caller.work',
-    linkLabel: 'caller.work',
-  },
-];
+  const project = PROJECTS_DATA[currentIndex];
 
-export default function Projects() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const handlePrev = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev === 0 ? PROJECTS_DATA.length - 1 : prev - 1));
+  };
 
-  useEffect(() => {
-    if (!scrollRef.current || !containerRef.current) return;
-
-    const scrollContainer = scrollRef.current;
-    const totalWidth = scrollContainer.scrollWidth;
-    const viewportWidth = containerRef.current.offsetWidth;
-
-    // Horizontal Scroll Trigger
-    const scrollTween = gsap.to(scrollContainer, {
-      x: () => -(totalWidth - viewportWidth),
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: () => `+=${totalWidth - viewportWidth}`,
-        scrub: 1, // Add "scrub" for smooth inertia
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      }
-    });
-
-    // Inertia/Parallax effect on individual cards
-    const cards = scrollContainer.querySelectorAll(`.${styles.card}`);
-    cards.forEach((card) => {
-      gsap.fromTo(card, 
-        { rotateY: 20, scale: 0.9 },
-        { 
-          rotateY: -20, 
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: card,
-            containerAnimation: scrollTween,
-            start: "left right",
-            end: "right left",
-            scrub: true
-          }
-        }
-      );
-    });
-
-    return () => {
-      scrollTween.kill();
-    };
-  }, []);
+  const handleNext = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev === PROJECTS_DATA.length - 1 ? 0 : prev + 1));
+  };
 
   return (
-    <section id="work" className={styles.section} ref={containerRef}>
-      <div className="section-header">
-        <span className="section-label">02 — Projects</span>
-      </div>
-      <div className="section-title">Selected Work</div>
-      <div className={styles.scrollWrapper}>
-        <div className={styles.grid} ref={scrollRef}>
-          {projects.map((p) => (
-            <div key={p.num} className={styles.card}>
-              <div className={styles.cardNum}>Project — {p.num}</div>
-              <div className={styles.cardName}>{p.name}</div>
-              <p className={styles.cardDesc}>{p.desc}</p>
-              <div className={styles.tags}>
-                {p.tags.map((t) => (
-                  <span key={t} className={styles.tag}>{t}</span>
-                ))}
+    <section id={id} className={`snap-section ${styles.projectSection}`}>
+      <div className={styles.container}>
+        {/* Left Column: Text & Navigation Controls */}
+        <div className={styles.leftColumn}>
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={project.slug}
+              custom={direction}
+              initial={{ opacity: 0, y: direction * 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -direction * 15 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className={styles.editorialContent}
+            >
+              <div className={styles.indexCounter}>
+                {project.index} &nbsp;/&nbsp; {project.total}
               </div>
-              {p.link && (
-                <a className={`${styles.link} gloss-effect`} href={p.link} target="_blank" rel="noopener noreferrer" onMouseEnter={playHoverPop} onClick={playClickThud}>
-                  {p.linkLabel}
-                </a>
-              )}
+              <div className={styles.counterDivider} />
+
+              <h2 className={styles.projectTitle}>{project.title}</h2>
+              <div className={styles.projectSubtitle}>{project.subtitle}</div>
+
+              <p className={styles.projectDescription}>{project.description}</p>
+
+              <div className={styles.techStackContainer}>
+                <div className={styles.techStackLabel}>TECH STACK</div>
+                <div className={styles.techStackList}>
+                  {project.techStack.map((tech, i) => (
+                    <span key={tech} className={styles.techItem}>
+                      {tech}
+                      {i < project.techStack.length - 1 && <span className={styles.bullet}>•</span>}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Buttons: Fill buttons, no icons */}
+              <div className={styles.actionButtons}>
+                <Link href={project.caseStudyLink} className={styles.fillButton}>
+                  View Case Study
+                </Link>
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.fillButton}
+                  >
+                    Live Project
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Carousel Arrows */}
+          <div className={styles.carouselNav}>
+            <button
+              onClick={handlePrev}
+              className={styles.carouselArrowBtn}
+              aria-label="Previous Project"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              onClick={handleNext}
+              className={styles.carouselArrowBtn}
+              aria-label="Next Project"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Fine vertical dividing line between text and image */}
+        <div className={styles.verticalDivider} />
+
+        {/* Right Section: Realistic MacBook Laptop Mockup Frame with Studio Background */}
+        <div className={styles.rightColumn}>
+          {/* Ambient Purple Studio LED Workspace Background */}
+          <div className={styles.studioBgLayer} />
+          <div className={styles.studioVignette} />
+
+          <div className={styles.laptopMockupWrapper}>
+            <div className={styles.macbook}>
+              {/* Laptop Screen Display Lid */}
+              <div className={styles.macbookLid}>
+                <div className={styles.screenBezel}>
+                  <div className={styles.webcamNotch}>
+                    <div className={styles.webcamLens} />
+                  </div>
+
+                  <div className={styles.displayArea}>
+                    <AnimatePresence mode="wait" custom={direction}>
+                      <motion.div
+                        key={project.slug}
+                        custom={direction}
+                        initial={{ opacity: 0, scale: 0.98, x: direction * 15 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        exit={{ opacity: 0, scale: 0.98, x: -direction * 15 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        className={styles.imageMotionWrapper}
+                      >
+                        <Image
+                          src={project.image}
+                          alt={project.imageAlt}
+                          fill
+                          sizes="(max-width: 1080px) 100vw, 55vw"
+                          className={styles.projectImage}
+                          priority
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </div>
+
+              {/* Laptop Keyboard / Base Chassis */}
+              <div className={styles.macbookBase}>
+                <div className={styles.notchIndent} />
+              </div>
+              <div className={styles.macbookBaseBottom} />
             </div>
-          ))}
+          </div>
         </div>
       </div>
+
+      {/* Smooth Gradient Overlay Transitioning to Next Section */}
+      <div className={styles.bottomOverlay} />
     </section>
   );
 }

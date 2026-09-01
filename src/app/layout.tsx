@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './variables.css';
 import './components.css';
-import { Bodoni_Moda, Raleway, Metamorphous, Playwrite_DE_LA_Guides } from 'next/font/google';
+import { Bodoni_Moda, Raleway, Metamorphous } from 'next/font/google';
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -22,11 +22,6 @@ const metamorphous = Metamorphous({
   variable: '--font-metamorphous',
 });
 
-const playwrite = Playwrite_DE_LA_Guides({
-  weight: '400',
-  variable: '--font-playwrite-dela',
-});
-
 import Nav from '@/components/Nav';
 
 export const metadata: Metadata = {
@@ -34,9 +29,9 @@ export const metadata: Metadata = {
   description:
     'Full-stack engineer, ML practitioner & founder. Built Prayukti vLAB (400+ users), EarnBuddy SaaS (1000+ users), Voice AI agents, and published LLM research with Taylor & Francis. CS @ MMMUT Gorakhpur | Data Science @ IIT Madras.',
   icons: {
-    icon: '/images/logo.ico',
-    shortcut: '/images/logo.ico',
-    apple: '/images/logo.ico',
+    icon: '/images/logo/logo.png',
+    shortcut: '/images/logo/logo.png',
+    apple: '/images/logo/logo.png',
   },
   keywords: [
     'Suyash Shukla',
@@ -93,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${bodoni.variable} ${raleway.variable} ${metamorphous.variable} ${playwrite.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${bodoni.variable} ${raleway.variable} ${metamorphous.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <ClientLayout>
           {children}
@@ -102,4 +97,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 

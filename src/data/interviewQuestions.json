@@ -1,0 +1,272 @@
+[
+  {
+    "id": "why-should-we-hire-you",
+    "question": "Why should we hire you?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-are-you-a-good-fit",
+    "question": "Why are you a good fit for this role?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-makes-you-different",
+    "question": "What makes you different from other candidates?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-should-we-choose-you",
+    "question": "Why should we choose you?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-can-you-bring-to-the-team",
+    "question": "What can you bring to the team?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-are-your-greatest-strengths",
+    "question": "What are your greatest strengths?",
+    "category": "PERSONAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-is-your-biggest-weakness",
+    "question": "What is your biggest weakness?",
+    "category": "PERSONAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-do-you-want-to-work-with-us",
+    "question": "Why do you want to work with us?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-do-you-want-this-role",
+    "question": "Why do you want this role?",
+    "category": "CAREER",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-this-company",
+    "question": "Why this company?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-are-you-looking-for-a-job",
+    "question": "Why are you looking for a job?",
+    "category": "CAREER",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "where-do-you-see-yourself-in-5-years",
+    "question": "Where do you see yourself in 5 years?",
+    "category": "CAREER",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-are-your-short-term-goals",
+    "question": "What are your short-term goals?",
+    "category": "CAREER",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-are-your-long-term-goals",
+    "question": "What are your long-term goals?",
+    "category": "CAREER",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "tell-me-about-yourself",
+    "question": "Tell me about yourself.",
+    "category": "PERSONAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "walk-me-through-your-resume",
+    "question": "Walk me through your resume.",
+    "category": "EXPERIENCE",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-motivates-you",
+    "question": "What motivates you?",
+    "category": "PERSONAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-drives-you",
+    "question": "What drives you?",
+    "category": "PERSONAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "how-do-you-handle-failure",
+    "question": "How do you handle failure?",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "how-do-you-handle-pressure",
+    "question": "How do you handle pressure?",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "how-do-you-deal-with-conflict",
+    "question": "How do you deal with conflict?",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "tell-me-about-a-time-you-failed",
+    "question": "Tell me about a time you failed.",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "tell-me-about-a-challenge-you-overcame",
+    "question": "Tell me about a challenge you overcame.",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "tell-me-about-a-time-you-took-initiative",
+    "question": "Tell me about a time you took initiative.",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "how-do-you-prioritize-your-work",
+    "question": "How do you prioritize your work?",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "how-do-you-work-in-a-team",
+    "question": "How do you work in a team?",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-is-your-leadership-style",
+    "question": "What is your leadership style?",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "how-do-you-handle-feedback",
+    "question": "How do you handle feedback?",
+    "category": "BEHAVIORAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-are-you-currently-learning",
+    "question": "What are you currently learning?",
+    "category": "TECHNICAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-did-you-choose-your-degree",
+    "question": "Why did you choose your degree?",
+    "category": "EDUCATION",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-are-you-pursuing-two-degrees",
+    "question": "Why are you pursuing two degrees?",
+    "category": "EDUCATION",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-computer-science",
+    "question": "Why Computer Science?",
+    "category": "EDUCATION",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-data-science",
+    "question": "Why Data Science?",
+    "category": "EDUCATION",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-so-many-projects",
+    "question": "Why so many projects?",
+    "category": "EXPERIENCE",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-do-you-build-so-many-things",
+    "question": "Why do you build so many things?",
+    "category": "EXPERIENCE",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-is-your-proudest-project",
+    "question": "What is your proudest project?",
+    "category": "TECHNICAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-are-you-looking-for-in-your-next-role",
+    "question": "What are you looking for in your next role?",
+    "category": "CAREER",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-are-your-salary-expectations",
+    "question": "What are your salary expectations?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-should-we-trust-you-with-this-responsibility",
+    "question": "Why should we trust you with this responsibility?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "are-you-overqualified",
+    "question": "Are you overqualified?",
+    "category": "FIT",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "are-you-going-to-stay-long-term",
+    "question": "Are you going to stay long-term?",
+    "category": "CAREER",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-did-you-leave-your-last-role",
+    "question": "Why did you leave your last role?",
+    "category": "EXPERIENCE",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "why-dont-you-specialize-in-one-thing",
+    "question": "Why don't you specialize in one thing?",
+    "category": "TECHNICAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "arent-you-spreading-yourself-too-thin",
+    "question": "Aren't you spreading yourself too thin?",
+    "category": "PERSONAL",
+    "answer": "Demo answer — this will be replaced later."
+  },
+  {
+    "id": "what-exactly-are-you-engineer-founder-or-student",
+    "question": "What exactly are you — engineer, founder, or student?",
+    "category": "PERSONAL",
+    "answer": "Demo answer — this will be replaced later."
+  }
+]

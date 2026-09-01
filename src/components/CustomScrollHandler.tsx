@@ -27,7 +27,7 @@ export default function CustomScrollHandler() {
       if (targetEl) {
         targetEl.scrollIntoView({ behavior: 'auto' });
         // Play rotary tick sound
-        playGearClick(0.1);
+        playGearClick();
       }
     };
 

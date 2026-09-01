@@ -1,20 +1,117 @@
 .whatSection {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #050b14;
+  color: #F5F5DC;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 100px 48px;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
-.canvasContainer {
+/* ── FAINT REALISTIC TWINKLING STARFIELD ── */
+.starField {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  max-width: 1000px;
-  max-height: 900px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.12;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.15);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1380px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── HEADER ── */
+.header {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionLabel {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: rgba(245, 245, 220, 0.45);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: 'Cinzel', var(--clay-heading-font), serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #F5F5DC;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(245, 245, 220, 0.75);
+  font-weight: 300;
+  max-width: 680px;
+  margin: 4px 0 0 0;
+}
+
+/* ── BENTO CONTAINER WRAPPER ── */
+.bentoWrapper {
+  width: 100%;
+}
+
+/* ── SMOOTH OVERLAY GRADIENT TRANSITION ── */
+.bottomOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(3, 6, 10, 0.7) 50%, #03060a 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .whatSection {
+    padding: 80px 24px;
+  }
 }
