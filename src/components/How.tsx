@@ -5,6 +5,20 @@ import styles from './How.module.css';
 export default function How({ id = 'how' }: { id?: string }) {
   return (
     <section id={id} className={`snap-section ${styles.howSection}`}>
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={styles.bgVideo}
+      >
+        <source src="/videos/footer.mp4" type="video/mp4" />
+      </video>
+
+      {/* Transparent Black Overlay */}
+      <div className={styles.overlay} />
+
       <div className={styles.container}>
         {/* Background Name SUYASH */}
         <div className={styles.bgName}>

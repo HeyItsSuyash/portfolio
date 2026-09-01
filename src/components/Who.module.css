@@ -2,10 +2,12 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 60px 40px 40px 40px;
+  box-sizing: border-box;
 }
 
 .bgVideo {
@@ -43,10 +45,19 @@
   pointer-events: none;
 }
 
-
-.content {
+/* Main Top/Center Hero Area */
+.topArea {
   position: relative;
   z-index: 3;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.content {
   text-align: center;
   color: #F5F5DC;
 }
@@ -69,7 +80,7 @@
 
 .strikethrough {
   font-family: 'Cinzel', serif;
-  font-size: 56px;
+  font-size: clamp(32px, 5vw, 56px);
   text-decoration: line-through;
   text-decoration-color: #e63946;
   text-decoration-thickness: 4px;
@@ -79,41 +90,45 @@
 
 .polymath {
   font-family: 'Cinzel', serif;
-  font-size: 84px;
+  font-size: clamp(44px, 7vw, 84px);
   font-weight: 900;
   color: #F5F5DC;
   letter-spacing: 0.06em;
   text-shadow: 0 0 30px rgba(245, 245, 220, 0.25);
 }
 
-.description {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  max-width: 440px;
+/* Bottom Container: Side-by-Side on Desktop, Stacked cleanly on Mobile */
+.bottomArea {
+  position: relative;
   z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+}
+
+.description {
+  max-width: 440px;
   font-family: var(--font-raleway), sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   color: rgba(245, 245, 220, 0.9);
   font-weight: 300;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-align: left;
 }
 
-/* Plain Text Phonetic Definition (No Box) */
+/* Plain Text Phonetic Definition */
 .definition {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
   background: transparent;
   padding: 0;
   border: none;
-  max-width: 320px;
-  z-index: 10;
+  max-width: 340px;
   color: white;
   font-family: var(--clay-heading-font), serif;
   text-align: right;
+  flex-shrink: 0;
 }
 
 .defWord {
@@ -135,27 +150,67 @@
   font-style: italic;
   font-size: 12px;
   opacity: 0.6;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   letter-spacing: 0.05em;
 }
 
 .defMeaning {
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.45;
   opacity: 0.8;
-  font-weight: 500;
+  font-weight: 400;
 }
 
-@media (max-width: 768px) {
-  .smallText { font-size: 16px; }
-  .strikethrough { font-size: 34px; }
-  .polymath { font-size: 48px; }
-  .mainPhrase { gap: 12px; flex-direction: column; }
+/* ── MOBILE RESPONSIVENESS ── */
+@media (max-width: 900px) {
+  .whoSection {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 24px 60px 24px;
+  }
+
+  .topArea {
+    padding: 30px 0;
+  }
+
+  .smallText {
+    font-size: 16px;
+    letter-spacing: 0.2em;
+  }
+
+  .mainPhrase {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .strikethrough {
+    font-size: 32px;
+  }
+
+  .polymath {
+    font-size: 46px;
+  }
+
+  .bottomArea {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
   .definition {
-    bottom: 20px;
-    right: 20px;
-    left: 20px;
-    max-width: none;
-    text-align: center;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .phonetic {
+    margin-left: 0;
+    display: inline-block;
   }
 }

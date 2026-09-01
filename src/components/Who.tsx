@@ -16,28 +16,33 @@ export default function Who({ id = 'who' }: { id?: string }) {
       </video>
       <div className={styles.overlay} />
       
-      {/* Main Content */}
-      <div className={styles.content}>
-        <div className={styles.smallText}>I AM A</div>
-        <div className={styles.mainPhrase}>
-          <span className={styles.strikethrough}>wannabe</span>
-          <span className={styles.polymath}>POLYMATH</span>
+      {/* Main Top / Center Hero Area */}
+      <div className={styles.topArea}>
+        <div className={styles.content}>
+          <div className={styles.smallText}>I AM A</div>
+          <div className={styles.mainPhrase}>
+            <span className={styles.strikethrough}>wannabe</span>
+            <span className={styles.polymath}>POLYMATH</span>
+          </div>
         </div>
       </div>
 
-      {/* Description in Bottom Left */}
-      <div className={styles.description}>
-        That brings trouble in focus, excessive juggling, a Notes app full of things to try, a blog full of drafts, and a GitHub full of unfinished projects. But I&rsquo;m doing fine, I guess. I like learning a little about a lot of things, getting curious about something new every other week, and occasionally turning that curiosity into something real. It&rsquo;s messy, but I think I&rsquo;d rather have too many things to explore than run out of them.
-      </div>
-
-      {/* Phonetic Definition (Plain Text - No Box) */}
-      <div className={styles.definition}>
-        <div className={styles.defWord}>Polymath</div>
-        <div className={styles.defType}>
-          <span className={styles.phonetic}>/ˈpɒl.i.mæθ/ &nbsp;&nbsp;</span>(noun)
+      {/* Structured Bottom Area (Description Left, Definition Right) */}
+      <div className={styles.bottomArea}>
+        {/* Description */}
+        <div className={styles.description}>
+          That brings trouble in focus, excessive juggling, a Notes app full of things to try, a blog full of drafts, and a GitHub full of unfinished projects. But I&rsquo;m doing fine, I guess. I like learning a little about a lot of things, getting curious about something new every other week, and occasionally turning that curiosity into something real. It&rsquo;s messy, but I think I&rsquo;d rather have too many things to explore than run out of them.
         </div>
-        <div className={styles.defMeaning}>
-          A person of wide knowledge or learning whose expertise spans a significant number of different subject areas.
+
+        {/* Phonetic Definition */}
+        <div className={styles.definition}>
+          <div className={styles.defWord}>Polymath</div>
+          <div className={styles.defType}>
+            <span className={styles.phonetic}>/ˈpɒl.i.mæθ/ &nbsp;&nbsp;</span>(noun)
+          </div>
+          <div className={styles.defMeaning}>
+            A person of wide knowledge or learning whose expertise spans a significant number of different subject areas.
+          </div>
         </div>
       </div>
 

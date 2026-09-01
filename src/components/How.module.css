@@ -3,11 +3,37 @@
   width: 100%;
   min-height: 100vh;
   height: 100vh;
-  background-color: var(--clay-primary, #0a192f);
+  background-color: #030406;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Full Space Background Video */
+.bgVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Transparent Black Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .container {
@@ -17,6 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 
 .bgName {

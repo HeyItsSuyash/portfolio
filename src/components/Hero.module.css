@@ -123,7 +123,6 @@
 .fillButton:hover {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
-  transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
@@ -150,7 +149,6 @@
 .ghostButton:hover {
   border-color: #F5F5DC;
   background-color: rgba(245, 245, 220, 0.12);
-  transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {

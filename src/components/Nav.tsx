@@ -8,10 +8,10 @@ import styles from './Nav.module.css';
 const NAV_ITEMS = [
   { id: 'hero', title: 'HOME', hover: 'WELCOME, FRIEND' },
   { id: 'who', title: 'WHO', hover: 'WHO AM I?' },
-  { id: 'what', title: 'WHAT', hover: "WHAT I'M UPTO" },
+  { id: 'when', title: 'WHEN', hover: "'WHEN' OF THINGS" },
   { id: 'why', title: 'WHY', hover: 'WHY SO SCATTERED?' },
   { id: 'where', title: 'WHERE', hover: 'WHERE DO WE START?' },
-  { id: 'when', title: 'WHEN', hover: 'WHEN NOTHING' },
+  { id: 'what', title: 'WHAT', hover: "WHAT I'M UPTO" },
   { id: 'how', title: 'HOW', hover: 'HOW DO WE TALK?' },
 ];
 

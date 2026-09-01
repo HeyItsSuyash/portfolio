@@ -2,41 +2,67 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: #03060a;
+  background-color: #050b14;
   color: #F5F5DC;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 120px 0 100px 0;
+  padding: 120px 0 140px 0;
   box-sizing: border-box;
   overflow: hidden;
 }
 
+/* ── FAINT REALISTIC TWINKLING STARFIELD ── */
+.starField {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.12;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.15);
+  }
+}
+
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 60px;
   position: relative;
   z-index: 2;
+  padding: 0 32px;
 }
 
 /* ── HEADER ── */
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 48px;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.headerLeft {
-  display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
 }
 
 .sectionLabel {
@@ -64,148 +90,174 @@
   line-height: 1.6;
   color: rgba(245, 245, 220, 0.75);
   font-weight: 300;
-  max-width: 620px;
+  max-width: 600px;
   margin: 0;
 }
 
-.navControls {
-  display: flex;
-  gap: 12px;
-}
-
-.navButton {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(8, 14, 24, 0.7);
-  border: 1px solid rgba(245, 245, 220, 0.2);
-  color: #F5F5DC;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  backdrop-filter: blur(12px);
-}
-
-.navButton:hover {
-  background: #F5F5DC;
-  color: #03060a;
-  border-color: #F5F5DC;
-  transform: scale(1.05);
-}
-
-/* ── HORIZONTAL SCROLL TRACK ── */
-.horizontalTrackWrapper {
+/* ── VERTICAL TIMELINE STRUCTURE ── */
+.timelineWrapper {
   position: relative;
   width: 100%;
-  padding: 40px 0;
+  margin: 20px auto;
+  padding: 30px 0;
 }
 
-.horizontalScrollTrack {
-  position: relative;
-  display: flex;
-  gap: 36px;
-  overflow-x: auto;
-  padding: 20px 48px 40px 48px;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(245, 245, 220, 0.2) transparent;
-}
-
-.horizontalScrollTrack::-webkit-scrollbar {
-  height: 6px;
-}
-
-.horizontalScrollTrack::-webkit-scrollbar-thumb {
-  background: rgba(245, 245, 220, 0.2);
-  border-radius: 4px;
-}
-
-/* Central Horizontal Connecting Line */
-.connectingLine {
+/* Continuous Central Vertical Line */
+.centralVerticalLine {
   position: absolute;
-  top: 40px;
-  left: 48px;
-  right: 48px;
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    rgba(245, 245, 220, 0.15) 0%,
-    rgba(168, 85, 247, 0.4) 50%,
-    rgba(245, 245, 220, 0.15) 100%
-  );
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(245, 245, 220, 0.35);
+  transform: translateX(-50%);
   z-index: 1;
+  pointer-events: none;
 }
 
-/* ── TIMELINE NODE CARD ── */
-.timelineNodeCard {
-  position: relative;
-  z-index: 2;
-  flex: 0 0 380px;
+/* Solid Small Circles at Start and End of Central Line */
+.startCapDot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F5F5DC;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  box-shadow: 0 0 8px rgba(245, 245, 220, 0.6);
+}
+
+.endCapDot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F5F5DC;
+  transform: translate(-50%, 50%);
+  z-index: 3;
+  box-shadow: 0 0 8px rgba(245, 245, 220, 0.6);
+}
+
+.nodesContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
 }
 
-/* Pin Node Icon on Top of Line */
-.pinWrapper {
+/* ── NODE ROW (50-50 SPLIT: CARD WRAPPER ATTACHED TO PIN) ── */
+.nodeRow {
   position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.nodeRowLeft {
+  justify-content: flex-start;
+}
+
+.nodeRowRight {
+  justify-content: flex-end;
+}
+
+/* Center Pin Node Exactly in Center of Timeline */
+.pinWrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  pointer-events: none;
 }
 
 .pinNode {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #050b14;
-  border: 2px solid rgba(245, 245, 220, 0.35);
+  border: 2px solid rgba(245, 245, 220, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #F5F5DC;
-  position: relative;
-  z-index: 3;
-  transition: all 0.3s ease;
+  transition: border-color 0.25s ease, color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
 }
 
-.timelineNodeCard:hover .pinNode {
-  border-color: #a855f7;
-  color: #a855f7;
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+.nodeRow:hover .pinNode {
+  border-color: #F5F5DC;
+  color: #FFFFFF;
+}
+
+.pinIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .pinIcon svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Card Column: Occupies exactly 50% width on left or right */
+.cardColumn {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.nodeRowLeft .cardColumn {
+  justify-content: flex-end;
+  padding-right: 0;
+}
+
+.nodeRowRight .cardColumn {
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+/* Horizontal Branch: Spans from 50% centerline directly to card edge */
+.branchLine {
+  flex: 1;
+  min-width: 40px;
+  height: 2px;
+  background: rgba(245, 245, 220, 0.35);
+  pointer-events: none;
 }
 
 /* Glassmorphic Event Card */
 .eventCard {
   width: 100%;
-  background: rgba(7, 13, 23, 0.75);
+  max-width: 480px;
+  background: rgba(7, 13, 23, 0.82);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(245, 245, 220, 0.12);
-  padding: 28px 24px;
-  border-radius: 16px;
+  border: 1px solid rgba(245, 245, 220, 0.14);
+  padding: 26px 26px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  min-height: 280px;
+  gap: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.25s ease;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
-.timelineNodeCard:hover .eventCard {
-  border-color: rgba(245, 245, 220, 0.35);
-  transform: translateY(-4px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(168, 85, 247, 0.12);
+.nodeRow:hover .eventCard {
+  border-color: rgba(245, 245, 220, 0.38);
 }
 
 .cardHeader {
@@ -240,7 +292,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .highlightItem {
@@ -271,22 +323,67 @@
   left: 0;
   width: 100%;
   height: 160px;
-  background: linear-gradient(to bottom, transparent 0%, rgba(3, 6, 10, 0.7) 50%, #000000 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(3, 4, 6, 0.7) 50%, #030406 100%);
   pointer-events: none;
   z-index: 5;
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .header {
-    padding: 0 24px;
+  .whenSection {
+    padding: 90px 0 100px 0;
   }
 
-  .horizontalScrollTrack {
-    padding: 20px 24px 40px 24px;
+  .container {
+    padding: 0 12px;
+    gap: 40px;
   }
 
-  .timelineNodeCard {
-    flex: 0 0 300px;
+  .nodesContainer {
+    gap: 36px;
+  }
+
+  .pinNode {
+    width: 32px;
+    height: 32px;
+    border-width: 1.5px;
+  }
+
+  .pinIcon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .branchLine {
+    min-width: 16px;
+  }
+
+  .eventCard {
+    padding: 14px 12px;
+    border-radius: 10px;
+    gap: 6px;
+  }
+
+  .yearBadge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .cardTitle {
+    font-size: 13.5px;
+    line-height: 1.2;
+  }
+
+  .highlightsList {
+    gap: 4px;
+  }
+
+  .highlightText {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .bulletDot {
+    font-size: 9px;
   }
 }

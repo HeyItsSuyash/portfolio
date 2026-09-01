@@ -31,7 +31,3 @@ export default function Hero({ id = 'hero' }: { id?: string }) {
     </section>
   );
 }
-
-
-
-

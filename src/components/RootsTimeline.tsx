@@ -9,9 +9,9 @@ export const TIMELINE_DATA = [
     year: 'Class 6 (2016–17)',
     title: 'First Spark',
     highlights: [
-      'Introduced to robotics through Roboshala, an IIT Roorkee initiative during summer vacation.',
-      'Attempted to build first quadcopter using motors, handmade controller, and thermacol body.',
-      'Sparked curiosity for building technology and laid the foundation for future growth.'
+      'Introduced to robotics through Roboshala, an IIT Roorkee summer workshop.',
+      'Attempted to build a basic quadcopter using hobby motors, handmade controls, and a thermacol frame.',
+      'This was my first real exposure to making things with technology and got me curious to try more.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -22,11 +22,11 @@ export const TIMELINE_DATA = [
   {
     id: 'class7',
     year: 'Class 7 (2017–18)',
-    title: 'Discovery of Web Development',
+    title: 'Discovering Web Development',
     highlights: [
-      'Built first HTML and CSS website and completed SoloLearn courses in HTML, CSS, and JS.',
-      'Began to enjoy creating things on the internet and connected with the concept of web development.',
-      'Joined the school computer club to explore and learn more consistently.'
+      'Built my first simple HTML and CSS web page and took beginner SoloLearn tutorials.',
+      'Enjoyed the instant feedback of seeing code render in a browser.',
+      'Joined the school computer club to learn alongside peers.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -37,11 +37,11 @@ export const TIMELINE_DATA = [
   {
     id: 'class8',
     year: 'Class 8 (2018–19)',
-    title: 'Exploration and Recognition',
+    title: 'Creative & Maker Exploration',
     highlights: [
-      'Explored 3D design (Blender) and video editing (Adobe Premiere Pro & Photoshop).',
-      'Built C-I-K-E (Because I Know Everything), a conceptual search engine replica project.',
-      'Head Mentor at school robotics club (DPS) and recognized in newspaper for a regional competition.'
+      'Experimented with 3D modeling in Blender and video editing in Premiere Pro and Photoshop.',
+      'Built C-I-K-E (Because I Know Everything), a conceptual search engine interface project.',
+      'Stayed active in the school robotics group and received regional newspaper recognition for a project showcase.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -52,11 +52,11 @@ export const TIMELINE_DATA = [
   {
     id: 'class9',
     year: 'Class 9 (2019–20)',
-    title: 'Competitive Growth in STEM',
+    title: 'Science Competitions',
     highlights: [
-      'Focused on STEM competitions and academic excellence.',
-      'Secured 1st position in science aggregation at the regional level and advanced to nationals.',
-      'Shifted toward structured achievement and built confidence in science and technology abilities.'
+      'Participated in regional science competitions and academic exhibitions.',
+      'Secured 1st place in science aggregation at the regional level and represented the school at nationals.',
+      'Helped build confidence in working with science and analytical problems.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -67,11 +67,11 @@ export const TIMELINE_DATA = [
   {
     id: 'class10',
     year: 'Class 10 (2020–21)',
-    title: 'Building for Real-World Impact',
+    title: 'First Practical Web App',
     highlights: [
-      'Built first full-stack website focused on COVID guidance as a Computer Science project.',
-      'Moved beyond learning to solving a real-world problem using technology.',
-      'Applied skills in a meaningful and practical context.'
+      'Built a full-stack website sharing COVID-19 safety information and local helpline details.',
+      'First experience creating a project aimed at an actual everyday problem rather than just a tutorial.',
+      'Solidified my interest in building software that people could genuinely use.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -82,11 +82,11 @@ export const TIMELINE_DATA = [
   {
     id: 'class11',
     year: 'Class 11 (2021–22)',
-    title: 'Strengthening Core Programming Skills',
+    title: 'Programming Fundamentals',
     highlights: [
-      'Detailed understanding of Python fundamentals including slicing, indexing, and loops.',
-      'Strengthened logical thinking and a systematic problem-solving approach.',
-      'Formed a solid foundation for advanced work in data and software development.'
+      'Spent time practicing Python syntax, data types, slicing, loops, and control structures.',
+      'Developed a clearer mental model of algorithmic problem solving and writing clean logic.',
+      'Set the baseline for later data science and web backend work.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -97,11 +97,11 @@ export const TIMELINE_DATA = [
   {
     id: 'class12',
     year: 'Class 12 (2022–23)',
-    title: 'Data, AI Foundations, and Achievements',
+    title: 'Data Foundations & Senior Wins',
     highlights: [
-      'Explored data management and analysis using Pandas, Matplotlib, and Scikit-learn.',
-      '1st Place National Chemistry Exhibition and National Web Development Exhibition.',
-      'Ranked in top three in a National Python programming competition.'
+      'Started exploring data analysis using Pandas, Matplotlib, and Scikit-learn.',
+      'Won 1st place in National Chemistry and Web Development exhibitions; placed in top 3 in a National Python competition.',
+      'Balanced competitive academics with hands-on coding side projects.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -111,12 +111,12 @@ export const TIMELINE_DATA = [
   },
   {
     id: 'early_college',
-    year: 'Early College',
-    title: 'Exposure and Experimentation',
+    year: '2023–2024',
+    title: 'Early College & Experimentation',
     highlights: [
-      'Developed NGO websites and experimented with YouTube, Instagram, and Print-on-demand.',
-      'Gained exposure to tools like Shopify, Twilio, OpenAI, and Prompt Engineering.',
-      'Expanded skill set across technology and business horizontally.'
+      'Built websites for NGOs and small projects while trying out tools like Shopify, Twilio, and prompt engineering.',
+      'Experimented with digital content, newsletters, and early tech side projects.',
+      'A messy, curious phase of discovering what kinds of software and products I enjoyed making most.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -125,13 +125,88 @@ export const TIMELINE_DATA = [
     )
   },
   {
+    id: 'community_leadership',
+    year: '2024',
+    title: 'Community & Student Tech',
+    highlights: [
+      'Helped organize technical events and hackathons with HackWithIndia and the CSIS society at MMMUT.',
+      'Mentored junior students and organized coding sessions and orientations.',
+      'Learned how technical communities operate and how to collaborate effectively on student-led initiatives.'
+    ],
+    icon: (
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    )
+  },
+  {
+    id: 'products_infrastructure',
+    year: '2024–2025',
+    title: 'Building Products & Systems',
+    highlights: [
+      'Founded Laterally Inverted Studio as a maker collaborative to build real-world software and experiments.',
+      'Built and maintained platforms like Prayukti vLAB (funded by a ₹10 Lakh college grant) for student simulations.',
+      'Shifted toward managing real system deployments, database performance, and multi-user reliability.'
+    ],
+    icon: (
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    )
+  },
+  {
+    id: 'startup_experience',
+    year: '2025',
+    title: 'Startup & Product Ownership',
+    highlights: [
+      'Co-founded EarnBuddy.io, managing the product stack and scaling to 500+ registered users across multiple colleges.',
+      'Iterated based on direct user conversations, handling auth, databases, and continuous updates.',
+      'Learned the differences between building a project and actually operating an active platform.'
+    ],
+    icon: (
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    )
+  },
+  {
+    id: 'research_and_ai',
+    year: '2025–2026',
+    title: 'Research & Applied AI',
+    highlights: [
+      'Conducted research on bias detection and fairness in LLMs, published with Taylor & Francis.',
+      'Pursued B.Sc in Data Science at IIT Madras (CGPA 8.4) alongside B.Tech in CSE at MMMUT.',
+      'Built AI workflows and tool-calling agents for real application use cases.'
+    ],
+    icon: (
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    )
+  },
+  {
+    id: 'professional_engineering',
+    year: '2026',
+    title: 'Professional Software Engineering',
+    highlights: [
+      'Worked as Full Stack Engineer at Exaflair Technologies on production web and mobile apps with Next.js, Fastify, and PostgreSQL.',
+      'Handled growth engineering at Ganges, automating operations and onboarding early platform users.',
+      'Qualified GATE 2026 in Computer Science & Information Technology.'
+    ],
+    icon: (
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    )
+  },
+  {
     id: 'present',
     year: 'Present',
-    title: 'Interdisciplinary Builder Mindset',
+    title: 'Still Building',
     highlights: [
-      'Well-versed in science, engineering, and mathematics; Gold medalist in Math Olympiads.',
-      'Worked on blockchain-based crowdfunding projects such as Sanchay.',
-      'Focusing on scalable solutions and continuously evolving as a builder.'
+      'Focusing on full-stack systems, developer tooling, and reliable AI applications.',
+      'Enjoy turning rough ideas into working software and exploring problems across different domains.',
+      'Still learning, experimenting with new tech, and staying curious.'
     ],
     icon: (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
