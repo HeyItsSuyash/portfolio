@@ -120,8 +120,7 @@ export const TIMELINE_DATA: TimelineEntry[] = [
   },
   {
     id: 'early_college',
-    year: '2023–2024',
-    collegeTag: 'Freshman',
+    year: 'Freshman Year (2023–2024)',
     title: 'Early College & Experimentation',
     highlights: [
       'Built websites for NGOs and small projects while trying out tools like Shopify, Twilio, and prompt engineering.',
@@ -136,8 +135,7 @@ export const TIMELINE_DATA: TimelineEntry[] = [
   },
   {
     id: 'community_leadership',
-    year: '2024',
-    collegeTag: 'Freshman',
+    year: 'Freshman Year (2024)',
     title: 'Community & Student Tech',
     highlights: [
       'Helped organize technical events and hackathons with HackWithIndia and the CSIS society at MMMUT.',
@@ -152,8 +150,7 @@ export const TIMELINE_DATA: TimelineEntry[] = [
   },
   {
     id: 'products_infrastructure',
-    year: '2024–2025',
-    collegeTag: 'Sophomore',
+    year: 'Sophomore Year (2024–2025)',
     title: 'Building Products & Systems',
     highlights: [
       'Founded Laterally Inverted Studio as a maker collaborative to build real-world software and experiments.',
@@ -168,8 +165,7 @@ export const TIMELINE_DATA: TimelineEntry[] = [
   },
   {
     id: 'startup_experience',
-    year: '2025',
-    collegeTag: 'Sophomore',
+    year: 'Sophomore Year (2025)',
     title: 'Startup & Product Ownership',
     highlights: [
       'Co-founded EarnBuddy.io, managing the product stack and scaling to 500+ registered users across multiple colleges.',
@@ -184,8 +180,7 @@ export const TIMELINE_DATA: TimelineEntry[] = [
   },
   {
     id: 'research_and_ai',
-    year: '2025–2026',
-    collegeTag: 'Junior',
+    year: 'Junior Year (2025–2026)',
     title: 'Research & Applied AI',
     highlights: [
       'Conducted research on bias detection and fairness in LLMs, published with Taylor & Francis.',
@@ -200,8 +195,7 @@ export const TIMELINE_DATA: TimelineEntry[] = [
   },
   {
     id: 'professional_engineering',
-    year: '2026',
-    collegeTag: 'Junior',
+    year: 'Junior Year (2026)',
     title: 'Professional Software Engineering',
     highlights: [
       'Worked as Full Stack Engineer at Exaflair Technologies on production web and mobile apps with Next.js, Fastify, and PostgreSQL.',
@@ -216,8 +210,7 @@ export const TIMELINE_DATA: TimelineEntry[] = [
   },
   {
     id: 'present',
-    year: 'Present',
-    collegeTag: 'Senior',
+    year: 'Senior Year (Present)',
     title: 'Still Building',
     highlights: [
       'Focusing on full-stack systems, developer tooling, and reliable AI applications.',

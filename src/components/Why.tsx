@@ -38,7 +38,7 @@ export default function Why({ id = 'why' }: { id?: string }) {
         {/* Section Header */}
         <header className={styles.header}>
           <h2 className={styles.title}>Why Should We Choose You?</h2>
-          <h3 className={styles.subHeading}>And alot of other similar questions have been asked to me quite a few times, so I decided to curate an FAQ section to answer them, <br /> here are some of the questions most commonly asked to me (and their answers).</h3>
+          <h3 className={styles.subHeading}>And alot of other similar questions have been asked to me quite a few times, so I decided to curate an FAQ section to answer them, here are some of the questions most commonly asked to me (and their answers).</h3>
         </header>
 
         {/* Live Search Bar */}

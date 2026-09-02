@@ -63,9 +63,7 @@ export default function When({ id = 'when' }: { id?: string }) {
         {/* Section Header */}
         <header className={styles.header}>
           <h2 className={styles.title}>&lsquo;When&rsquo; of Things</h2>
-          <p className={styles.subtitle}>
-            आप क्रोनोलॉजी समझ लीजिए
-          </p>
+
         </header>
 
         {/* Vertical Alternating Timeline Container */}
