@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,6 +9,49 @@ export function generateStaticParams() {
   return PROJECTS_DATA.map((project) => ({
     slug: project.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = PROJECTS_DATA.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  return {
+    title: `${project.title} — ${project.subtitle}`,
+    description: project.description,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} — ${project.subtitle}`,
+      description: project.description,
+      url: `/projects/${project.slug}`,
+      type: 'article',
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: project.imageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} — ${project.subtitle}`,
+      description: project.description,
+      images: [project.image],
+    },
+  };
 }
 
 export default async function CaseStudyPage({
@@ -22,8 +66,34 @@ export default async function CaseStudyPage({
     notFound();
   }
 
+  const projectJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': project.slug === 'we-wont-forget' ? 'WebSite' : 'SoftwareApplication',
+    name: project.title,
+    headline: project.subtitle,
+    description: project.description,
+    image: `https://heyitssuyash.github.io/portfolio${project.image}`,
+    url: project.liveLink || `https://heyitssuyash.github.io/portfolio/projects/${project.slug}`,
+    author: {
+      '@type': 'Person',
+      '@id': 'https://heyitssuyash.github.io/portfolio/#person',
+      name: 'Suyash Shukla',
+      url: 'https://heyitssuyash.github.io/portfolio',
+    },
+    creator: {
+      '@type': 'Person',
+      '@id': 'https://heyitssuyash.github.io/portfolio/#person',
+    },
+    applicationCategory: project.slug === 'prayukti' ? 'EducationalApplication' : project.slug === 'earnbuddy' ? 'BusinessApplication' : 'WebApplication',
+    operatingSystem: 'Any',
+  };
+
   return (
     <main className={styles.main}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
       {/* Top Header / Breadcrumb */}
       <header className={styles.header}>
         <div className={styles.topNav}>

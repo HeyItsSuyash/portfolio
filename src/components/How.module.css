@@ -77,7 +77,7 @@
   transform: translateY(-2px);
 }
 
-/* ── BOTTOM LEFT EMAIL BADGE ── */
+/* ── BOTTOM LEFT EMAIL BADGE (DESKTOP) & CENTERED (MOBILE) ── */
 .bottomLeftMail {
   position: absolute;
   bottom: 28px;
@@ -110,23 +110,24 @@
 @media (max-width: 768px) {
   .howSection {
     min-height: 100vh;
-    padding: 40px 16px;
+    padding: 60px 16px 80px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .container {
-    gap: 28px;
+    gap: 24px;
     padding: 0 8px;
     align-items: center;
     justify-content: center;
   }
 
   .handleText {
-    font-size: clamp(38px, 9.2vw, 56px);
-    line-height: 1.05;
+    font-size: clamp(32px, 8.5vw, 48px);
+    line-height: 1.1;
     text-align: center;
+    letter-spacing: -0.02em;
   }
 
   .socialIconsRow {
@@ -145,16 +146,21 @@
     padding: 4px;
   }
 
+  /* Center the email to the bottom edge on mobile devices */
   .bottomLeftMail {
-    bottom: 20px;
-    left: 20px;
-    font-size: 11.5px;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    white-space: nowrap;
+    margin: 0;
   }
 }
 
 @media (max-width: 420px) {
   .handleText {
-    font-size: clamp(32px, 8.8vw, 42px);
+    font-size: clamp(26px, 7.8vw, 36px);
   }
 
   .socialIconsRow {
@@ -162,7 +168,12 @@
   }
 
   .socialLink {
-    font-size: 15.5px;
+    font-size: 15px;
     padding: 3px;
+  }
+
+  .bottomLeftMail {
+    bottom: 20px;
+    font-size: 11px;
   }
 }

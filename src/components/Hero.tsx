@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import styles from './Hero.module.css';
 
 export default function Hero({ id = 'hero' }: { id?: string }) {
@@ -45,25 +46,21 @@ export default function Hero({ id = 'hero' }: { id?: string }) {
 
         {/* CTA Buttons closely below subtitle */}
         <div className={styles.ctaGroup}>
+          <Link
+            href="/knowledge"
+            className={styles.fillButton}
+          >
+            View Simplified
+          </Link>
           <a
             href="#where"
             onClick={(e) => {
               e.preventDefault();
               smoothScrollTo('where');
             }}
-            className={styles.fillButton}
-          >
-            Browse Projects
-          </a>
-          <a
-            href="#when"
-            onClick={(e) => {
-              e.preventDefault();
-              smoothScrollTo('when');
-            }}
             className={styles.ghostButton}
           >
-            Follow My Journey
+            Browse Projects
           </a>
         </div>
       </div>

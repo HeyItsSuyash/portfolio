@@ -79,3 +79,42 @@
   height: 1px;
   background: var(--clay-heading);
 }
+
+@media (max-width: 768px) {
+  .navContainer {
+    top: 10px;
+  }
+
+  .navDialerWrapper {
+    max-width: 90vw;
+    height: 38px;
+  }
+
+  .dialerTrack {
+    gap: 14px;
+  }
+
+  .dialerItem {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    min-width: 80px;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .navDialerWrapper {
+    max-width: 92vw;
+    height: 36px;
+  }
+
+  .dialerTrack {
+    gap: 10px;
+  }
+
+  .dialerItem {
+    font-size: 10px;
+    min-width: 70px;
+    padding: 4px 6px;
+  }
+}

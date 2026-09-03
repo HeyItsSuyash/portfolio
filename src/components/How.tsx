@@ -130,7 +130,7 @@ export default function How({ id = 'how' }: { id?: string }) {
         </div>
       </div>
 
-      {/* Email displayed in the bottom-left corner */}
+      {/* Email badge */}
       <a href="mailto:yolo@suyashshukla.com" className={styles.bottomLeftMail}>
         <span className={styles.mailDot} />
         yolo@suyashshukla.com

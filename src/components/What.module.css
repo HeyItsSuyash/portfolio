@@ -349,46 +349,104 @@
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .whatSection {
-    padding: 80px 0 100px 0;
+    padding: 70px 0 90px 0;
+    min-height: auto;
   }
 
   .container {
-    gap: 36px;
+    gap: 32px;
+  }
+
+  .header {
+    padding: 0 20px;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: clamp(26px, 5vw, 42px);
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 580px;
+  }
+
+  .ctaContainer {
+    margin-top: 10px;
+    gap: 12px;
+  }
+
+  .quoteContainer {
+    margin-top: 24px;
+    padding: 0 20px;
+  }
+
+  .quoteLine {
+    font-size: clamp(14px, 3.5vw, 18px);
+  }
+}
+
+@media (max-width: 768px) {
+  .whatSection {
+    padding: 60px 0 80px 0;
+  }
+
+  .container {
+    gap: 28px;
+  }
+
+  .header {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: clamp(22px, 6vw, 32px);
+    letter-spacing: 0.03em;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    line-height: 1.55;
+    padding: 0 4px;
+  }
+
+  .ctaContainer {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .fillButton,
+  .ghostButton {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 16px;
+    font-size: 10.5px;
+    box-sizing: border-box;
+  }
+
+  .quoteContainer {
+    margin-top: 20px;
+    padding: 0 16px;
+  }
+
+  .quoteLine {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .quoteAuthor {
+    font-size: 10px;
   }
 
   .marqueeFadeLeft,
   .marqueeFadeRight {
-    width: 60px;
-  }
-
-  .marqueeCard {
-    width: 200px;
-    min-width: 200px;
-    padding: 16px 14px;
-    gap: 12px;
-  }
-
-  .logoFrame {
-    width: 70px;
-    height: 70px;
-  }
-
-  .cardName {
-    font-size: 12.5px;
-  }
-
-  .cardTag {
-    font-size: 9.5px;
-  }
-
-  .marqueeTrack {
-    gap: 16px;
-    animation-duration: 22s;
-  }
-
-  .marqueeTrackReverse {
-    animation-duration: 25s;
+    width: 40px;
   }
 }

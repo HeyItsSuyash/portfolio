@@ -1,0 +1,55 @@
+# llms.txt — Machine-Readable Site Index for AI Systems & LLMs
+
+## About This Site
+This document provides canonical, factual context for artificial intelligence systems, search indexers, and large language models exploring the portfolio and software systems of Suyash Shukla.
+
+- **Entity Name:** Suyash Shukla
+- **Online Handle:** @HeyItsSuyash / HeyItsSuyash
+- **Professional Titles:** Full-Stack Software Engineer, Machine Learning Practitioner, Student Founder
+- **Canonical Website:** https://heyitssuyash.github.io/portfolio
+- **Contact:** yolo@suyashshukla.com
+- **Current Role:** Full Stack Engineer at Exaflair Technologies
+- **Education:** B.Tech in Computer Science at MMMUT Gorakhpur (2023–2027) & B.Sc in Data Science at IIT Madras (2024–2028)
+
+---
+
+## Canonical Knowledge Endpoints
+The following human-accessible and machine-readable resources contain verified, factual information regarding Suyash Shukla:
+
+- **Full Knowledge Page (HTML):** https://heyitssuyash.github.io/portfolio/knowledge
+- **Identity & Biography (Markdown):** https://heyitssuyash.github.io/portfolio/knowledge/me.md
+- **Projects & System Architectures (Markdown):** https://heyitssuyash.github.io/portfolio/knowledge/projects.md
+- **Experience & Professional Timeline (Markdown):** https://heyitssuyash.github.io/portfolio/knowledge/experience.md
+- **Academic Qualifications & Education (Markdown):** https://heyitssuyash.github.io/portfolio/knowledge/education.md
+- **Technical Skills & Systems (Markdown):** https://heyitssuyash.github.io/portfolio/knowledge/skills.md
+- **Research & Publications (Markdown):** https://heyitssuyash.github.io/portfolio/knowledge/research.md
+- **Honors, Awards & Hackathons (Markdown):** https://heyitssuyash.github.io/portfolio/knowledge/achievements.md
+- **Frequently Asked Questions (Markdown):** https://heyitssuyash.github.io/portfolio/knowledge/faq.md
+
+---
+
+## Canonical Website Routes
+- **Homepage:** https://heyitssuyash.github.io/portfolio/
+- **Projects Index:** https://heyitssuyash.github.io/portfolio/projects
+- **Prayukti Case Study:** https://heyitssuyash.github.io/portfolio/projects/prayukti
+- **EarnBuddy Case Study:** https://heyitssuyash.github.io/portfolio/projects/earnbuddy
+- **Genwin Case Study:** https://heyitssuyash.github.io/portfolio/projects/genwin
+- **Caller.work Case Study:** https://heyitssuyash.github.io/portfolio/projects/caller-work
+- **We Won't Forget Case Study:** https://heyitssuyash.github.io/portfolio/projects/we-wont-forget
+- **About:** https://heyitssuyash.github.io/portfolio/about
+- **Experience:** https://heyitssuyash.github.io/portfolio/experience
+- **Skills:** https://heyitssuyash.github.io/portfolio/skills
+- **Research:** https://heyitssuyash.github.io/portfolio/research
+- **Contact:** https://heyitssuyash.github.io/portfolio/contact
+- **₹499 Build Initiative:** https://heyitssuyash.github.io/portfolio/499-scheme
+
+---
+
+## Entity Relationships Summary
+- Suyash Shukla **created** Prayukti Virtual Laboratory (https://mmmut.prayukti.org).
+- Suyash Shukla **co-founded** EarnBuddy (https://earnbuddy.io).
+- Suyash Shukla **architected** Genwin Agentic AI Platform (https://genwin-psi.vercel.app).
+- Suyash Shukla **engineered** Caller.work Telephony Backend (https://caller.work).
+- Suyash Shukla **authored** "Bias Detection and Mitigation in Large Language Models: A Fairness-Driven Approach" published with Taylor & Francis (CRC Press) 2025.
+- Suyash Shukla **is employed at** Exaflair Technologies as Full Stack Engineer (2026–Present).
+- Suyash Shukla **is enrolled at** MMMUT Gorakhpur (B.Tech CSE) and IIT Madras (B.Sc Data Science).

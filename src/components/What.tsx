@@ -53,11 +53,11 @@ export default function What({ id = 'what' }: { id?: string }) {
         </header>
 
         {/* Logo marquee using the revised transparent/crisp images from logo_ideas */}
-        <div className="w-full py-8 flex flex-col items-center justify-center">
+        <div className="w-full py-4 sm:py-8 flex flex-col items-center justify-center">
           <LogoMarquee
             logos={VENTURE_LOGOS}
             className="w-full"
-            gap={96}
+            gap={64}
           />
         </div>
 

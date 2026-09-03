@@ -1,0 +1,212 @@
+.main {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #06080a;
+  color: #F5F5DC;
+  font-family: var(--font-raleway), sans-serif;
+  padding: 48px 24px 100px 24px;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 1px solid rgba(245, 245, 220, 0.15);
+  padding-bottom: 32px;
+  margin-bottom: 48px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.backHome {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(245, 245, 220, 0.6);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.backHome:hover {
+  color: #FFFFFF;
+}
+
+.formatToggle {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.formatBadge {
+  font-size: 11px;
+  font-family: monospace;
+  background: rgba(245, 245, 220, 0.1);
+  border: 1px solid rgba(245, 245, 220, 0.2);
+  padding: 4px 8px;
+  color: #F5F5DC;
+}
+
+.title {
+  font-family: 'Cinzel', var(--clay-heading-font), serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #F5F5DC;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(245, 245, 220, 0.75);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.rawLinksBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.rawLink {
+  font-size: 12px;
+  font-family: monospace;
+  color: rgba(245, 245, 220, 0.8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 2px 4px;
+}
+
+.rawLink:hover {
+  color: #FFFFFF;
+}
+
+.section {
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(245, 245, 220, 0.08);
+  padding-bottom: 36px;
+}
+
+.sectionHeading {
+  font-family: 'Cinzel', var(--clay-heading-font), serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #F5F5DC;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.textBlock {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(245, 245, 220, 0.85);
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(245, 245, 220, 0.82);
+}
+
+.bullet {
+  color: #F5F5DC;
+  font-weight: bold;
+}
+
+.projectCard {
+  background: rgba(15, 19, 24, 0.4);
+  border: 1px solid rgba(245, 245, 220, 0.1);
+  padding: 20px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.projectName {
+  font-size: 17px;
+  font-weight: 700;
+  color: #F5F5DC;
+}
+
+.projectRole {
+  font-size: 12px;
+  color: rgba(245, 245, 220, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.projectDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(245, 245, 220, 0.75);
+  margin-bottom: 10px;
+}
+
+.techRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.techItem {
+  font-size: 11px;
+  font-family: monospace;
+  color: rgba(245, 245, 220, 0.6);
+  background: rgba(245, 245, 220, 0.05);
+  padding: 2px 6px;
+}
+
+.footerLinks {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(245, 245, 220, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footerText {
+  font-size: 13px;
+  color: rgba(245, 245, 220, 0.5);
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 24px 16px 60px 16px;
+  }
+}
