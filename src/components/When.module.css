@@ -343,23 +343,90 @@
   z-index: 5;
 }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE MEDIA QUERIES ── */
+
+/* Tablets / Medium Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+    gap: 48px;
+  }
+
+  .eventCard {
+    max-width: 100%;
+    padding: 20px 18px;
+    flex-shrink: 1;
+  }
+
+  .branchLine {
+    min-width: 20px;
+  }
+
+  .cardTitle {
+    font-size: 17px;
+  }
+
+  .highlightText {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+}
+
+/* Mobile & Portrait Tablets (<= 768px): Single Column Left Timeline */
 @media (max-width: 768px) {
   .whenSection {
-    padding: 90px 0 100px 0;
+    padding: 80px 0 100px 0;
   }
 
   .container {
-    padding: 0 12px;
-    gap: 40px;
+    padding: 0 16px;
+    gap: 36px;
+  }
+
+  .title {
+    font-size: 32px;
   }
 
   .subtitle {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .timelineWrapper {
+    margin: 10px 0;
+    padding: 20px 0;
+  }
+
+  /* Shift vertical line to the left on small screens */
+  .centralVerticalLine,
+  .startCapDot,
+  .endCapDot {
+    left: 20px;
+    transform: none;
+  }
+
+  .startCapDot,
+  .endCapDot {
+    transform: translate(-3px, 0);
   }
 
   .nodesContainer {
-    gap: 36px;
+    gap: 28px;
+  }
+
+  /* All rows align to left */
+  .nodeRow,
+  .nodeRowLeft,
+  .nodeRowRight {
+    justify-content: flex-start;
+    padding-left: 44px;
+    box-sizing: border-box;
+  }
+
+  /* Pin on the left vertical line */
+  .pinWrapper {
+    left: 20px;
+    top: 24px;
+    transform: translate(-50%, 0);
   }
 
   .pinNode {
@@ -373,14 +440,24 @@
     height: 18px;
   }
 
+  /* Card column takes 100% of remaining width */
+  .cardColumn {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
+  /* Hide horizontal branch lines in single-column layout */
   .branchLine {
-    min-width: 16px;
+    display: none;
   }
 
   .eventCard {
-    padding: 14px 12px;
-    border-radius: 10px;
-    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 16px;
+    border-radius: 12px;
+    gap: 8px;
+    flex-shrink: 1;
   }
 
   .cardHeader {
@@ -388,30 +465,30 @@
   }
 
   .yearBadge {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+
+  .collegeBadge {
     font-size: 9px;
     padding: 2px 6px;
   }
 
-  .collegeBadge {
-    font-size: 8.5px;
-    padding: 2px 5px;
-  }
-
   .cardTitle {
-    font-size: 13.5px;
-    line-height: 1.2;
+    font-size: 15px;
+    line-height: 1.25;
   }
 
   .highlightsList {
-    gap: 4px;
+    gap: 6px;
   }
 
   .highlightText {
-    font-size: 11px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .bulletDot {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
