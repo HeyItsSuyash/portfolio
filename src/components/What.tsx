@@ -74,7 +74,7 @@ export default function What({ id = 'what' }: { id?: string }) {
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
-            Follow on X
+            Follow Journey
           </a>
 
           <a
@@ -88,7 +88,7 @@ export default function What({ id = 'what' }: { id?: string }) {
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M13.6 8.4h-3.4v4.2h3.4c1.16 0 2.1-.94 2.1-2.1s-.94-2.1-2.1-2.1zm-1.6-8.4C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm1.6 15.6h-3.4V18H7.2V6h6.4c2.82 0 5.1 2.28 5.1 5.1 0 2.55-1.87 4.5-4.3 4.5z" />
             </svg>
-            Follow on Product Hunt
+            See Products (Coming Soon)
           </a>
         </div>
 
